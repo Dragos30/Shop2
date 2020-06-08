@@ -1,0 +1,37 @@
+.toggle-shopbutton{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 24px;
+  width: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+}
+.toggle-shopbutton:focus{
+  outline: none;
+}
+.toggle-shopbutton_line{
+  width: 30px;
+  height: 3px;
+  background: rgb(0, 0, 0);
+}
+.toggle-shopbutton_line>p{
+  margin-left: 30px;
+  margin-top: 0; 
+  font-weight: 800;
+}
+@media screen and (min-width : 0px) and (max-width : 767px){
+  .toggle-shopbutton{
+  justify-self: right;
+  float: right;
+  }
+  .toggle-shopbutton_line>p{
+  margin-left: -65px;
+  margin-top: 0; 
+  font-weight: 800;
+}
+} 
+

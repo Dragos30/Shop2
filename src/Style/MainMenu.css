@@ -1,0 +1,33 @@
+#main{
+    display: flex;
+    justify-content: space-around;
+    align-items: left;
+    list-style: none;
+}
+#main a:active{
+    background-color: black;
+    color: aliceblue;
+    font-size: 0.5rem;
+    font-weight: 800;
+    list-style: none;
+    border-radius: 10px;
+    padding: 20px 30px;
+    text-decoration: none;
+}
+#main a{
+    color: black;
+    text-decoration: none;
+    font-size: 0.5rem;
+    border-radius: 10px;
+    font-weight: 800;
+    padding: 20px 30px;
+    background-color: #ffffff;
+}
+@media screen and (min-width : 0px) and (max-width : 767px){
+    
+}
+@media (max-width: 768px){
+#main{
+    display: none;
+  }
+}
