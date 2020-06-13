@@ -18,7 +18,7 @@ function MainMenu() {
                     </li>
                     <li >
                         <Link to={"/portfolio"}>
-                            Watercolour
+                            Mixed
                                 </Link>
                     </li>
                     <li >

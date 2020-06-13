@@ -1,4 +1,4 @@
-body {
+div.App {
   width: auto;
   height: auto;
   margin: 0 auto;
@@ -45,20 +45,44 @@ h1,p{
   background-color: black;
 }
 #nature img{
-  margin: 10px 50px;
-  border: 10px solid white;
-  border-radius: 10px;
+  margin: auto;
 }
-/* #nature i{
-  position: absolute;
-  margin-top: 100px;
-  margin-left: -50px;
-} */
-#abstract img{
+.ui.cards{
+  display: flex;
+  flex-direction: row;
   margin: 10px 50px;
+  padding: none;
+}
+.ui.cards>div.card{
+  display: flex;
+  width: 130px;
+  border-bottom-right-radius: 50px;
+}
+.i-frame{
+  cursor: pointer;
+  position: absolute;
+  margin-left: 110px;
+  margin-top: 90px;
+  text-align: center;
+  color: black;
+  font-weight: 100;
+}
+.star.outline.icon{
+  margin-left: 110px;
+  cursor: pointer;
+}
+.star.outline.icon:active{
+  color: gold;
+}
+.i-frame:hover{
+ background-color: #ffffff; 
+  background-size: 30px;
+}
+#abstract img{
+  margin: auto;
 }
 #portraits img{
-  margin: 10px 50px;
+  margin: auto;
 }
 .slide-container {
   width: 500px;
@@ -82,28 +106,6 @@ h1,p{
 .react-slideshow-container + div.indicators > .each-slideshow-indicator{
   display: none;
 }
-
-/* .each-fade {
-  display: flex;
-}
-
-.each-fade .image-container {
-  width: 30%;
-  overflow: hidden;
-}
-
-.each-fade .image-container img {
-  width: 30%;
-}
-
-.each-fade h2 {
-  width: 25%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  background: #adceed;
-} */
 @media screen and (min-width : 0px) and (max-width : 767px){
 .each-slide > div {
   justify-content: center;

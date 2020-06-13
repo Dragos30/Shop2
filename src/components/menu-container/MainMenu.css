@@ -3,6 +3,7 @@
     justify-content: space-around;
     align-items: left;
     list-style: none;
+    margin: 20px auto;
 }
 #main a:active,
 #main a:hover{

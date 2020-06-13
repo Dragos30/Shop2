@@ -25,6 +25,7 @@ ul.ui.secondary.menu{
   height: auto;
   padding: 10px 10px;
   background-color: rgba(0, 0, 0, 0);
+  margin: auto;
 }
 #footer a {
     color: aliceblue;
