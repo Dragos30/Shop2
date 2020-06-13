@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
-import "../Style/MainMenu.css";
+import "./MainMenu.css";
 
 function MainMenu() {
     return (
@@ -8,24 +8,30 @@ function MainMenu() {
             <ul id="main">
                 <li>
                     <Link to={"/"}>
-                        Home
+                        Canvas
                                 </Link>
                 </li>
                 <li>
                         <Link to={"/about"}>
-                            About
+                            Oil
                                 </Link>
                     </li>
                     <li >
                         <Link to={"/portfolio"}>
-                            Portfolio
+                            Watercolour
                                 </Link>
                     </li>
                     <li >
                         <Link to={"/contact"}>
-                            Contact
+                            Acrylic
                                 </Link>
-                    </li>
+                </li>
+                <li>
+                    
+                    <input type="text" placeholder="Search.."></input>
+                    <button> <i className="fa fa-search" aria-hidden="true"></i></button>
+                    
+                </li>
 
        </ul>
     </nav>

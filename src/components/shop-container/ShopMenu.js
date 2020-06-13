@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
-import "../Style/Menu.css";
+import "./ShopMenu.css";
 
 
-class Menu extends Component {
+class ShopMenu extends Component {
     render() {
         var visibility = "hide";
 
@@ -12,45 +12,48 @@ class Menu extends Component {
         }
 
         return (
-            <nav id="flyoutMenu"
+            <div>
+            <nav id="flyoutShopMenu"
                 onMouseDown={this.props.handleMouseDown}
-                className={visibility}>   
+                className={visibility}>      
+                
                 <Link to={"/"}>
                   
-                            Home
+                           Your orders
                              
                    
                     </Link>   
                     
               
              
-                <Link to={"/about"}>
+                <Link to={"/"}>
                 
-                            About
+                           Wish list
                              
                
                 </Link> 
            
                
-                <Link to={"/portfolio"}>
+                <Link to={"/"}>
                
                        
-                            Portfolio
+                            Account
                              
                  
                 </Link>  
             
          
-                <Link to={"/contact"}>
+                <Link to={"/"}>
                  
-                            Contact
+                            Checkout
                              
                    
                 </Link> 
                    
-            </nav>
+                </nav>
+            </div>
         );
     }
 }
 
-export default Menu;
+export default ShopMenu;

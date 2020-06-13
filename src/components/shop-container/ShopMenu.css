@@ -8,7 +8,7 @@
   transition: transform .5s
   cubic-bezier(0, .52, 0, 1);
   overflow: scroll;
-  max-width: 200px;
+  max-width: 300px;
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -34,23 +34,19 @@
     border-radius: 10px;
     font-weight: 800;
     padding: 10px 30px;
-    background-color: aliceblue;
+    background-color: #ffffff;
 }
-#flyoutShopMenu a:active{
+#flyoutShopMenu a:active,
+#flyoutShopMenu a:hover{
     background-color: black;
-    color: aliceblue;
+    color:aliceblue;
     font-size: 0.5rem;
     font-weight: 800;
     list-style: none;
     border-radius: 10px;
-    padding: 20px 30px;
+    padding: 10px 30px;
     text-decoration: none;
 }
-#flyoutShopMenu a:hover,
-#flyoutShopMenu a:active{
-  color: rgb(0, 0, 0);
-  box-shadow: 20px rgb(104, 0, 0);
-} 
 @media screen and (min-width : 0px) and (max-width : 767px){
   #flyoutShopMenu{
     float: right;
@@ -74,7 +70,7 @@
   width: 40%;
 } */
 
-@media screen and (min-width : 0px) and (max-width : 767px){
+@media screen and (min-width : 0px) and (max-width : 800px){
   #flyoutShopMenu{
       width: auto;
       background-size: cover;

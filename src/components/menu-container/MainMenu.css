@@ -4,7 +4,8 @@
     align-items: left;
     list-style: none;
 }
-#main a:active{
+#main a:active,
+#main a:hover{
     background-color: black;
     color: aliceblue;
     font-size: 0.5rem;
@@ -22,6 +23,24 @@
     font-weight: 800;
     padding: 20px 30px;
     background-color: #ffffff;
+}
+#main input{
+  width: 200px;
+  height: 48px;
+  border-radius: 10px;
+  border-style: none;
+  margin-top: -13px;
+}
+#main button{
+  width: 10px;
+  background-color: transparent;
+  position: absolute;
+  border: none;
+  margin-left: -30px;
+  cursor: pointer;
+}
+.fa.fa.search{
+    margin-right: -200px;
 }
 @media screen and (min-width : 0px) and (max-width : 767px){
     

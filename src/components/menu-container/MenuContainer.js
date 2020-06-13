@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import "../index.css";
 import MenuButton from "./MenuButton";
 import Menu from "./Menu";
 import MainMenu from './MainMenu';

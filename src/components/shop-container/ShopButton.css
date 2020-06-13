@@ -19,11 +19,11 @@
   background: rgb(0, 0, 0);
 }
 .toggle-shopbutton_line>p{
-  margin-left: 30px;
+  margin-left: 40px;
   margin-top: 0; 
   font-weight: 800;
 }
-@media screen and (min-width : 0px) and (max-width : 767px){
+@media screen and (min-width : 0px) and (max-width : 800px){
   .toggle-shopbutton{
   justify-self: right;
   float: right;

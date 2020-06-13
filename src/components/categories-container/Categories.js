@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "@reach/router";
-import "../Style/Categories.css";
+import "./Categories.css";
 
 const Categories = () =>  {
 

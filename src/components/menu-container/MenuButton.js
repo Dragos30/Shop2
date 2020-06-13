@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../Style/MenuButton.css";
+import "./MenuButton.css";
 
 class MenuButton extends Component {
     render() {

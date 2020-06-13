@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../Style/ShopButton.css";
+import "./ShopButton.css";
 
 class ShopButton extends Component {
     render() {

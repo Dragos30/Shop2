@@ -1,37 +1,37 @@
 .dropbtn {
   width: 100px;
-  height: 30px;
+  height: 50px;
   list-style: none;
   border-radius: 10px;
   align-content: flex-start;
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
-  padding: 3px 5px;
+  padding: 20px 20px;
   border: none;
   box-shadow: aliceblue;
+  text-align: start;
 }
 
 .dropdown {
-  position: relative;
   display: inline-block;
+  margin-right: 50px;
 }
 
 .dropdown-content {
-  display: none;
   position: absolute;
   background-color: aliceblue;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  min-width: 20px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
   z-index: 1;
 }
 
 .dropdown-content a {
     color: black;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 0.5rem;
     border-radius: 10px;
     font-weight: 800;
-    padding: 20px 30px;
+    padding: 10px 10px;
     background-color: rgb(255, 255, 255);
     margin-top: 5px;
     display: block;
@@ -40,21 +40,27 @@
 .dropdown-content a:hover {
     background-color: black;
     color: aliceblue;
-    font-size: 1.2rem;
+    font-size: 0.5rem;
     font-weight: 800;
     list-style: none;
     border-radius: 10px;
-    padding: 20px 30px;
+    padding: 10px 10px;
     text-decoration: none;
 }
 
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {
-   width: 100px;
-  height: 30px;
+  width: 100px;
+  height: 50px;
   border-radius: 10px;
-  padding: 3px 5px;
+  padding: 20px 20px;
   color:aliceblue;
   background-color: black;
+}
+@media screen and (min-width : 0px) and (max-width : 767px){
+ .dropbtn {
+  display: inline-block;
+  margin-right: 50px;
+}
 }

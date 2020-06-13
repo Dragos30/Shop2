@@ -1,37 +1,33 @@
 body {
-  margin: 0;
-    font-family: 'Courier New',
-    monospace;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  text-align: start;
+  padding: 20px 20px;
+  font-family: 'Times New Roman', Times, serif;
   background-color: aliceblue;
 }
 h1,p{
+  margin: 10px 50px;
   color:black;
   text-align: center;
 }
-#intro{
-  display: flex;
-  flex-direction: column;
-  color: aliceblue;
-  background-image: url(./Style/PIcs/Header.jpg);
-  border-radius: 10px 10px 10px 10px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  align-content: center;
-  margin: 20px auto;
-  width: 30%;
-  height: 500px;
+.react-slideshow-container{
+  width: 500px;
+  height: auto;
+  margin: 10px 50px;
 }
-#intro h1{
+.each-slide h3{
   color: aliceblue;
   font-size: 1rem;
   text-align: left;
   margin: 10px auto;
 }
-#intro button{
+.each-slide button{
   width: 100px;
   height: 30px;
   list-style: none;
-  border-radius: 10px;
+  border-radius: none;
   align-content: flex-start;
   background-color: aliceblue;
   color: rgb(0, 0, 0);
@@ -39,7 +35,8 @@ h1,p{
   border: none;
   box-shadow: aliceblue;
 }
-#intro button:active{
+.each-slide button:active,
+.each-slide button:hover{
   width: 100px;
   height: 30px;
   border-radius: 10px;
@@ -47,19 +44,77 @@ h1,p{
   color:aliceblue;
   background-color: black;
 }
-@media screen and (min-width : 0px) and (max-width : 767px){
-  #intro{
-  display: flex;
-  flex-direction: column;
+#nature img{
+  margin: 10px 50px;
+  border: 10px solid white;
+  border-radius: 10px;
+}
+/* #nature i{
+  position: absolute;
+  margin-top: 100px;
+  margin-left: -50px;
+} */
+#abstract img{
+  margin: 10px 50px;
+}
+#portraits img{
+  margin: 10px 50px;
+}
+.slide-container {
+  width: 500px;
+  margin: 0 auto; 
+}
+
+.each-slide > div {
+  justify-content: center;
+  background-size: cover;
+  width: 500px;
+  height: 300px;
+  border-radius: 10px;
+}
+.each-slide span {
+  padding: 20px;
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0);
+  text-align: center;
   color: aliceblue;
-  background-image: url(./Style/PIcs/Header.jpg);
-  border-radius: 10px 10px 10px 10px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  align-content: center;
-  margin: 20px auto;
-  width: 100%;
-  height: 500px;
+}
+.react-slideshow-container + div.indicators > .each-slideshow-indicator{
+  display: none;
+}
+
+/* .each-fade {
+  display: flex;
+}
+
+.each-fade .image-container {
+  width: 30%;
+  overflow: hidden;
+}
+
+.each-fade .image-container img {
+  width: 30%;
+}
+
+.each-fade h2 {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background: #adceed;
+} */
+@media screen and (min-width : 0px) and (max-width : 767px){
+.each-slide > div {
+  justify-content: center;
+  background-size: cover;
+  width: 250px;
+  height: 150px;
+}
+.react-slideshow-container{
+  width: 250px;
+  height: auto;
+  margin: 10px 50px;
 }
   }
 

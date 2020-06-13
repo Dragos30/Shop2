@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import "../index.css";
 import ShopButton from "./ShopButton";
 import ShopMenu from "./ShopMenu";
 
