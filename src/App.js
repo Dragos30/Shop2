@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <ShopContainer />
       <MenuContainer />
-      <Categories/>
+      <Categories />
       <Router>
         <Home path="/" exact component={Home} />
         <About path="/about" exact component={About} />
