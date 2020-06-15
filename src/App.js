@@ -5,7 +5,6 @@ import MenuContainer from "./components/menu-container/MenuContainer";
 import About from "./components/pages-container/About";
 import Portfolio from "./components/pages-container/Portfolio";
 import Contact from "./components/pages-container/Contact";
-import ShopContainer from './components/shop-container/ShopContainer';
 import Categories from "./components/categories-container/Categories";
 import Nature from "./components/categories-container/Nature";
 import Abstract from "./components/categories-container/Abstract";
@@ -16,7 +15,6 @@ import Shop from "./components/shop-container/Shop";
 function App() {
   return (
     <div className="App">
-      <ShopContainer />
       <MenuContainer />
       <Categories />
       <Router>

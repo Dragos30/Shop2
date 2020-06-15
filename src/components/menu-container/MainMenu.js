@@ -7,6 +7,11 @@ function MainMenu() {
         <nav >
             <ul id="main">
                 <li>
+                    <Link to={"/shop"}>
+                        Shop
+                                </Link>
+                </li>
+                <li>
                     <Link to={"/"}>
                         Canvas
                                 </Link>

@@ -9,7 +9,7 @@ class Home extends Component  {
         this.props.addToShop(id);
     }
     render() {
-     let itemList = this.props.items.map(item => {
+     let itemList= this.props.items.map(item => {
             return (
                 <div className="wrapper" key={item.id}>
                 <div className="star-frame">

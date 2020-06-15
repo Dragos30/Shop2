@@ -15,7 +15,11 @@ class Menu extends Component {
             <ul id="flyoutMenu"
                 onMouseDown={this.props.handleMouseDown}
                 className={visibility}>   
-              
+                <li>
+                    <Link to={"/shop"}>
+                        Shop
+                                </Link>
+                </li>
                 <li>
                     <Link to={"/"}>
                         Canvas

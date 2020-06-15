@@ -116,8 +116,10 @@ div.item-desc{
   text-align: center;
 }
 ul.list{
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
   padding: 0;
-  margin: none;
 }
 .list ul li{
   list-style: none;

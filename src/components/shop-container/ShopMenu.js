@@ -1,45 +1,31 @@
-import React, { Component } from "react";
+import React from 'react';
 import { Link } from "@reach/router";
 import "./ShopMenu.css";
 
+const ShopMenu = () => {
 
-class ShopMenu extends Component {
-    render() {
-        var visibility = "hide";
 
-        if (this.props.menuVisibility) {
-            visibility = "show";
-        }
+    return (
+        <div className="dropdown">
+            <button className="dropbtn">Menu</button>
+            <nav className="dropdown-content">
+                <Link to={"/"}>
+                    Your Orders
+                                </Link>
+                <Link to={"/shop"}>
+                    Wish List
+                                </Link>
+                <Link to={"/"}>
+                    Account
+                                </Link>
+                <Link to={"/"}>
+                   Checkout
+                                </Link>
 
-        return (
-            <ul id="flyoutShopMenu"
-                onMouseDown={this.props.handleMouseDown}
-                className={visibility}>      
 
-                    <li>
-                        <Link to={"/"}>
-                            Your Orders
-                                </Link>
-                    </li>
-                    <li>
-                        <Link to={"/shop"}>
-                            Wish List
-                                </Link>
-                    </li>
-                    <li >
-                        <Link to={"/"}>
-                           Account
-                                </Link>
-                    </li>
-                    <li >
-                        <Link to={"/"}>
-                            Checkout
-                                </Link>
-                    </li>
-                   
-                </ul>
-        );
-    }
+            </nav>
+        </div>
+    );
 }
 
 export default ShopMenu;

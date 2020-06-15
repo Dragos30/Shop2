@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeItem } from '../actions/shopActions';
 import Recipe from '../Recipe';
+import ShopContainer from './ShopContainer';
 
 class Shop extends Component {
 
@@ -35,12 +36,13 @@ class Shop extends Component {
             ) :
 
             (
-                <b> <p>Nothing in your Shop!</p></b>
+                <h1>Nothing in your Shop!</h1>
             )
         return (
             <div id="shop">
-                <div>
+                <div className="content">
                     <h1>Wish List</h1>
+                    <ShopContainer />
                     <ul className="list">
                         {addedItems}
                     </ul>

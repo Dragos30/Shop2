@@ -1,80 +1,77 @@
-#flyoutShopMenu{
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(240, 248, 255, 0.705);
-  position: fixed;
-  top: 0;
-  left: 0;
-  transition: transform .5s
-  cubic-bezier(0, .52, 0, 1);
-  overflow: scroll;
-  max-width: 300px;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding: none;
+.dropbtn {
+  width: 100px;
+  height: 50px;
   list-style: none;
+  border-radius: 10px;
+  align-content: flex-start;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 20px 20px;
+  border: none;
+  box-shadow: aliceblue;
+  text-align: start;
+  margin-left: 25px;
 }
-#flyoutShopMenu.hide {
-  transform: translate3d(-100vw, 0, 0);
+.dropdown {
+  position: relative;
+  margin-right: 50px;
 }
- 
-#flyoutShopMenu.show {
-  transform: translate3d(0vw, 0, 0);
-  overflow: hidden;
-} 
-#flyoutShopMenu li{
-  margin: 0.5rem 0;
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: aliceblue;
+  min-width: 20px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  z-index: 1;
 }
-#flyoutShopMenu a{
-   color: black;
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content:hover,
+.dropdown-content:active{
+   position: absolute;
+  background-color: aliceblue;
+  min-width: 20px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
     text-decoration: none;
     font-size: 0.5rem;
     border-radius: 10px;
     font-weight: 800;
-    padding: 10px 30px;
-    background-color: #ffffff;
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 5px;
+    display: block;
 }
-#flyoutShopMenu a:active,
-#flyoutShopMenu a:hover{
+
+.dropdown-content a:hover {
     background-color: black;
-    color:aliceblue;
+    color: aliceblue;
     font-size: 0.5rem;
     font-weight: 800;
     list-style: none;
     border-radius: 10px;
-    padding: 10px 30px;
+    padding: 10px 10px;
     text-decoration: none;
 }
-@media screen and (min-width : 0px) and (max-width : 767px){
-  #flyoutShopMenu{
-    float: right;
-  }
-}
-  /* @media screen and (max-width: 600px) {
-  #flyouShopMenu a{
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin: 5px auto;
-  border-top: 2px solid #61DAFB;
-  border-bottom: 2px solid #61DAFB;
-  border-left: 2px solid #61DAFB;
-  border-right: 2px solid #61DAFB;
-  border-width: 10px;
-  border-radius: 10px 10px 10px 10px;
-  box-sizing: border-box;
-  background-color: #61DAFB;
-  width: 40%;
-} */
 
-@media screen and (min-width : 0px) and (max-width : 800px){
-  #flyoutShopMenu{
-      width: auto;
-      background-size: cover;
-      float: right;
-  }
-} 
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  padding: 20px 20px;
+  color:aliceblue;
+  background-color: black;
+}
+@media screen and (min-width : 0px) and (max-width : 767px){
+ .dropbtn {
+  display: inline-block;
+  margin-right: 50px;
+}
+}
