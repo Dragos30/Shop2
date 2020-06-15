@@ -1,17 +1,40 @@
-.App {
-  width: auto;
-  height: auto;
-  margin: 0 auto;
-  text-align: start;
-  padding: 20px 20px;
-  font-family: 'Times New Roman', Times, serif;
+body{
   background-color: aliceblue;
+  background-size: contain;
 }
-#about,#portfolio,#contact,#home,#nature,#abstract,#portrait{
+#about,#portfolio,#contact,#home,#nature,#abstract,#portraits,#shop{
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+div.box{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.star-frame{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.star-frame:hover,
+.star-frame:active{
+    color: gold;
+}
+.i-frame{
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row-reverse;
+    color: black;
+    margin-top: -10px;
+}
+.i-frame:hover,
+.i-frame:active{
+   color: gold;
 }
 h1,p{
   margin: auto;
@@ -50,19 +73,65 @@ h1,p{
   color:aliceblue;
   background-color: black;
 }
+.card-title{
+  text-align: center;
+}
+.wrapper{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    background-size: cover;
+    border-radius: 10px;
+    padding: none;
+    justify-content: space-around;
+    margin: 10px 10px;
+}
+.wrapper img{
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    margin: auto;
+    padding: 10px 30px;
+    justify-content: space-around;
+}
+.list{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    background-size: cover;
+    border-radius: 10px 10px;
+    justify-content: space-around;
+    margin: 10px 10px;
+}
+.list img{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    justify-content: space-around;
+    margin: auto;
+}
+div.item-desc{
+  text-align: center;
+}
+ul.list{
+  padding: 0;
+  margin: none;
+}
+.list ul li{
+  list-style: none;
+}
+.ui.collection li{
+  list-style: none;
+  text-align: center;
+}
+.ui.red.button{
+  display: flex;
+  margin: auto;
+ }
 #nature img{
   margin: auto;
-}
-.ui.cards{
-  display: flex;
-  flex-direction: row;
-  margin: 10px 50px;
-  padding: none;
-}
-.ui.cards>div.card{
-  display: flex;
-  width: 130px;
-  border-bottom-right-radius: 50px;
 }
 #abstract img{
   margin: auto;

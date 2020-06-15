@@ -6,7 +6,7 @@ class ShopContainer extends Component {
     render() {
         return (
             <div>
-                <ShopButton handleMouseDown={this.handleMouseDown} />
+                <ShopButton handleMouseDown={this.handleMouseDown}/>
                 <ShopMenu handleMouseDown={this.handleMouseDown}
                     menuVisibility={this.state.visible} />  
             </div>

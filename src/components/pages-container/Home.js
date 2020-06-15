@@ -1,79 +1,59 @@
-import React from 'react';
-import "../pages-container/Footer.css";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addToShop } from '../actions/shopActions';
 import Slideshow from '../Slideshow-container/Slideshow';
-import CardContainer from '../card-container/CardContainer';
-
-function Home() {
-    return (
-       <div id="home">
-            <Slideshow />
-            <CardContainer imageUrl="/Assets/Beach2.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Fireplace2.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Paint3.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Paint4.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Paint6.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Park way2.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Paint1.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Durdle Door.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Exotic Sunset2.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Forest2.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/From Above2.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/High in the clouds2.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Moonlight2.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/paint5.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/The Fall2.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Waterfall2.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Winter World2.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Fireplace2.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Melting.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Paint1.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Paint3.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Paint4.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Park way2.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Paint6.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/The all seeing eye2.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/The ghost.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/The Mind Beyond2.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/The Night.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/The Roots.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/The Shine.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/Worlds End.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            <CardContainer imageUrl="/Assets/The Spartan.jpg" title="Beach" subtitle="Dimensions:21 cm x 29,7 cm" price="100£">
-            </CardContainer>
-            </div>
+          
+class Home extends Component  {   
     
-    )
-}
+    handleClick = (id) => {
+        this.props.addToShop(id);
+    }
+    render() {
+     let itemList = this.props.items.map(item => {
+            return (
+                <div className="wrapper" key={item.id}>
+                <div className="star-frame">
+                    <i className="star outline icon"></i>
+                </div>
+                <div className="imgContainer">
+                        <img alt={item.title} src={item.img} />
+                        <span className="card-title"><b><h3>{item.title}</h3></b></span>
+                        <span to="/" className="i-frame" onClick={() => { this.handleClick(item.id) }}>
+                            <i className="plus icon"></i>
+                        </span>
+                </div>
+                <div className="text">
+                    <p>{item.desc}</p>
+                    <p><b>Price: {item.price}$</b></p>
+                </div>
+            </div>
 
-export default Home;
+            )
+        })
+
+        return (
+            < div id="home" >
+            <div className="container">
+                    <h1 className="center">Canvas Paintings</h1>
+                    <Slideshow/>
+                <div className="box">
+                    {itemList}
+                </div>
+                </div>
+                </ div>
+        )
+    }
+}
+const mapStateToProps = (state) => {
+    return {
+        items: state.items
+    }
+}
+        const mapDispatchToProps = (dispatch) => {
+
+            return {
+                addToShop: (id) => { dispatch(addToShop(id))}
+            }
+        }
+
+export default connect( mapStateToProps, mapDispatchToProps )(Home);

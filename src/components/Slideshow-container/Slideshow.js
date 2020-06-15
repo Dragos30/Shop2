@@ -3,9 +3,9 @@ import "animate.css/animate.min.css";
 import { Slide } from 'react-slideshow-image';
 
     const slideImages = [
-        "/Assets/Beach2.jpg",
-        "/Assets/Moonlight2.jpg",
-        "/Assets/paint5.jpg"
+        "/Beach2.jpg",
+        "/Beach2.jpg",
+        "/Beach2.jpg"
     ];
 
     const properties = {

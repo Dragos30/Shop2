@@ -10,7 +10,8 @@ import Categories from "./components/categories-container/Categories";
 import Nature from "./components/categories-container/Nature";
 import Abstract from "./components/categories-container/Abstract";
 import Portraits from "./components/categories-container/Potraits";
-import Footer from './components/pages-container/Footer';
+import Footer from "./components/pages-container/Footer";
+import Shop from "./components/shop-container/Shop";
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
         <Contact path="/contact" exact component={Contact} />
         <Nature path="/nature" exact component={Nature} />
         <Abstract path="/abstract" exact component={Abstract} />
-        <Portraits path="/portraits" exact component={Portraits}/>
+        <Portraits path="/portraits" exact component={Portraits} />
+        <Shop path="/shop" exact component={Shop}/>
       </Router>
       <Footer/>
     </div>
