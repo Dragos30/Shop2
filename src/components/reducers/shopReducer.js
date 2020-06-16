@@ -77,14 +77,13 @@ const shopReducer = (state = initState, action) => {
         //check if the action id exists in the addedItems
         let existed_item = state.addedItems.find(item => action.id === item.id)
         if (existed_item) {
-            addedItem.quantity = 1
+            addedItem.price = addedItem.price
             return {
-                ...state,
-                total: state.total + addedItem.price
+                ...state,   
             }
         }
         else {
-            addedItem.quantity = 1;
+            addedItem.price = addedItem.price;
             //calculating the total
             let newTotal = state.total + addedItem.price
 
@@ -101,7 +100,7 @@ const shopReducer = (state = initState, action) => {
         let new_items = state.addedItems.filter(item => action.id !== item.id)
 
         //calculating the total
-        let newTotal = state.total - (itemToRemove.price * itemToRemove.quantity)
+        let newTotal = state.total - (itemToRemove.price)
         console.log(itemToRemove)
         return {
             ...state,
@@ -109,7 +108,8 @@ const shopReducer = (state = initState, action) => {
             total: newTotal
         }
     }
-    return state;
-    }
+  
+        return state;
 
+}
 export default shopReducer;

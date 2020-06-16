@@ -19,8 +19,8 @@ function App() {
       <Categories />
       <Router>
         <Home path="/" exact component={Home} />
-        <About path="/about" exact component={About} />
-        <Portfolio path="/portfolio" exact component={Portfolio} />
+        <About path="/about" exact component={About}/>
+        <Portfolio path="/portfolio" exact component={Portfolio}/>
         <Contact path="/contact" exact component={Contact} />
         <Nature path="/nature" exact component={Nature} />
         <Abstract path="/abstract" exact component={Abstract} />

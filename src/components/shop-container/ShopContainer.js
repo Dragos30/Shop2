@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ShopButton from "./ShopButton";
 import ShopMenu from "./ShopMenu";
 
 class ShopContainer extends Component {
