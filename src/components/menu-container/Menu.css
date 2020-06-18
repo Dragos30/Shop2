@@ -36,6 +36,7 @@
     border-radius: 10px;
     font-weight: 800;
     padding: 10px 10px;
+    margin: auto;
 }
 #flyoutMenu a:hover,
 #flyoutMenu a:active{
@@ -48,18 +49,6 @@
     padding: 10px 10px;
     text-decoration: none;
 } 
-#flyoutMenu input{
-  width: 200px;
-  height: 50px;
-  border-radius: 10px;
-  border-style: none;
-  margin: 0 auto;
-}
-#flyoutMenu i>{
-  position: absolute;
-  justify-self: flex-end;
-  cursor: pointer;
-}
 #flyoutMenu button{
   width: 10px;
   background-color: transparent;
@@ -73,8 +62,8 @@
 @media screen and (min-width : 0px) and (max-width : 769px){
   
 #flyoutMenu {
-  width: auto;
-  height: 800px;
+  width: 150px;
+  height: 500px;
   background-color: rgba(240, 248, 255, 0.397);
   position: fixed;
   top: 0;
@@ -98,6 +87,7 @@
     border-radius: 10px;
     font-weight: 800;
     padding: 10px 10px;
+    margin: auto;
 }
 #flyoutMenu a:hover,
 #flyoutMenu a:active{

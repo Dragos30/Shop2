@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "@reach/router";
 import "./Menu.css";
 
-
 class Menu extends Component {
     render() {
         var visibility = "hide";
@@ -39,14 +38,6 @@ class Menu extends Component {
                     <Link to={"/contact"}>
                         Acrylic
                                 </Link>
-                </li>
-                <li>
-
-                    <input type="text" placeholder="Search.."></input>
-                    
-                        <i className="fa fa-search" aria-hidden="true">
-                        </i>
-
                 </li>
             </ul>
         );

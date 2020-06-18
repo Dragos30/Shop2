@@ -25,13 +25,6 @@
     padding: 20px 30px;
     background-color: #ffffff;
 }
-#main input{
-  width: 200px;
-  height: 48px;
-  border-radius: 10px;
-  border-style: none;
-  margin-top: -13px;
-}
 #main button{
   width: 10px;
   background-color: transparent;

@@ -1,31 +1,63 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addToShop } from '../actions/shopActions';
+import ImageList from '../SearchBar/ImageList';
 
-class Portfolio extends Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      complete: false
-    }
-    this.toggleComplete = this.toggleComplete.bind(this);
+class Portfolio extends Component {
+  state = { images: [] };
+  handleClick = (id) => {
+    this.props.addToShop(id);
   }
-
-  toggleComplete() {
-    this.setState(prevState => ({
-      complete: !prevState.complete
-    }));
-  }
-
   render() {
-    const incompleteIcon = <span><i className="minus icon"></i></span>;
-    const completeIcon = <span><i id="icon" className="plus icon" ></i></span>;
+    let productsList = this.props.products.map(product => {
+      if (product.type === "mixed")
+        return (
+          <div className="wrapper" key={product.id} >
+            <div className="star-frame">
+              <i className="star outline icon"></i>
+            </div>
+            <div className="imgContainer">
+              <img alt={product.title} src={product.img} />
+              <span className="card-title"><b><h3>{product.title}</h3></b>
+              </span>
+              <span to="/" className="i-frame">
+                <span className="i-frame" onClick={() => { this.handleClick(product.id) }}>
+                  <i className="plus icon"></i>
+                </span>
+              </span>
+            </div>
+            <div className="text">
+              <p>{product.desc}</p>
+              <p><b>Price: {product.price}$</b></p>
+            </div>
+          </div>
 
+        )
+
+    })
     return (
-      <div id="portfolio" className="transbox">
-      <span className="i-frame" onClick={this.toggleComplete}>
-        {this.state.complete ? completeIcon : incompleteIcon}
-      </span>
-      </div>
-    );
+      < div id="home" >
+        <div className="container">
+          <h1 className="center">Mixed Paintings</h1>
+          <div className="box">
+            {productsList}
+          </div>
+          <ImageList images={this.state.images} />
+        </div>
+      </ div>
+    )
   }
 }
-export default Portfolio;
+const mapStateToProps = (state) => {
+  return {
+    products: state.products
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+
+  return {
+    addToShop: (id) => { dispatch(addToShop(id)) }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Portfolio);

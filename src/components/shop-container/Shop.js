@@ -1,36 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { removeItem } from '../actions/shopActions';
+import { removeProduct } from '../actions/shopActions';
 import Recipe from '../Recipe';
 import ShopContainer from './ShopContainer';
 
 class Shop extends Component {
 
-    //to remove the item completely
+    //to remove the product completely
     handleRemove = (id) => {
-        this.props.removeItem(id);
+        this.props.removeProduct(id);
     }
 
     render() {
-
-        let addedItems = this.props.items.length ?(
-                this.props.items.map( item => {
+        let addedProducts = this.props.products.length ?(
+                this.props.products.map( product => {
                     return (
-                        <li className="list" key={item.id}>
-                            <div className="item-img">
-                                <img src={item.img} alt={item.img} className="" />
+                        <div className="wrapper" key={product.id} >
+                            <div className="imgContainer">
+                                <img alt={product.title} src={product.img} />
+                                <span className="card-title"><b><h3>{product.title}</h3></b>
+                                </span>
                             </div>
-
-                            <div className="item-desc">
-                                <span className="title">{item.title}</span>
-                                <span className="subtitle">{item.subtitle}</span>
-                                <p>{item.desc}</p>
-                                <p><b>Price: {item.price}$</b></p>
-                                <button className="ui red button" onClick={() => { this.handleRemove(item.id) }}>Remove</button>
+                            <div className="text">
+                                <p>{product.desc}</p>
+                                <p><b>Price: {product.price}$</b></p>
+                                <button className="ui red button" onClick={() => { this.handleRemove(product.id) }}>Remove</button>
                             </div>
-
-                        </li>
-
+                        </div>
+                        
                     )
                 })
             ) :
@@ -44,11 +41,10 @@ class Shop extends Component {
                     <h1>Wish List</h1>
                     <ShopContainer />
                     <ul className="list">
-                        {addedItems}
+                      {addedProducts}
                     </ul>
                     <Recipe/>
-                </div>
-                
+                </div>               
             </div>
         )
     }
@@ -56,13 +52,12 @@ class Shop extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        items: state.addedItems,
- 
+        products: state.addedProducts, 
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        removeItem: (id) => { dispatch(removeItem(id)) }
+        removeProduct: (id) => { dispatch(removeProduct(id)) }
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps )(Shop)
