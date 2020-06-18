@@ -17,10 +17,6 @@ const Categories = () =>  {
                     <Link to={"/abstract"}>
                         Abstract
                                 </Link>
-                    <Link to={"/portraits"}>
-                        Portraits
-                                </Link>
-                     
                 </nav>
             </div>
         );

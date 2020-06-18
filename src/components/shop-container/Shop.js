@@ -36,16 +36,14 @@ class Shop extends Component {
                 <h1>Nothing in your Shop!</h1>
             )
         return (
-            <div id="shop">
-                <div className="content">
-                    <h1>Wish List</h1>
-                    <ShopContainer />
-                    <ul className="list">
-                      {addedProducts}
-                    </ul>
+            <ShopContainer>
+                <div>
+                    {addedProducts}
+                </div>
+                <div>
                     <Recipe/>
-                </div>               
-            </div>
+                </div>
+            </ShopContainer>
         )
     }
 }

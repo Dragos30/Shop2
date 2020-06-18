@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addToShop } from '../actions/shopActions';
 import ImageList from '../SearchBar/ImageList';
-import addButton from '../data/add-button';
+import { addToShop } from '../actions/shopActions';
 
 class About extends Component {
     state = { images: [] };
@@ -21,8 +20,10 @@ class About extends Component {
                             <img alt={product.title} src={product.img} />
                             <span className="card-title"><b><h3>{product.title}</h3></b>
                             </span>
-                            <span>
-                          <addButton/>
+                            <span to="/" className="i-frame">
+                                <span className="i-frame" onClick={() => { this.handleClick(product.id) }}>
+                                    <i className="plus icon"></i>
+                                </span>
                             </span>
                         </div>
                         <div className="text">
@@ -35,7 +36,7 @@ class About extends Component {
 
         })
         return (
-            < div id="home" >
+            < div id="about" >
                 <div className="container">
                     <h1 className="center">Oil Paintings</h1>
                     <div className="box">

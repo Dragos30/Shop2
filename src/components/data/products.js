@@ -43,7 +43,7 @@ const products = {
         { id: 10, title: 'Yng yang', category: "abstract", type: "oil", desc: "21,0 x 29,7 cm", price: 90, img: product10 },
         { id: 11, title: 'Palm Trees', category: "nature", type: "oil", desc: "21,0 x 29,7 cm", price: 90, img: product11 },
         { id: 12, title: 'The Road', category: "abstract", type: "mixed", desc: "21,0 x 29,7 cm", price: 90, img: product12 },
-        { id: 13, title: 'Alone in the sun', category: "nature", type: "mixed",  desc: "21,0 x 29,7 cm", price: 90, img: product13 },
+        { id: 13, title: 'Alone in the sun', category:"nature", type: "mixed",  desc: "21,0 x 29,7 cm", price: 90, img: product13 },
         { id: 14, title: 'The past', category: "abstract", type: "mixed", desc: "21,0 x 29,7 cm", price: 90, img: product14 },
         { id: 15, title: 'Prague', category: "nature", desc: "29,7 x 42,0 cm ", price: 90, img: product15 },
         { id: 16, title: 'Park way', category: "nature", type: "mixed", desc: "21,0 x 29,7 cm", price: 90, img: product16 },
