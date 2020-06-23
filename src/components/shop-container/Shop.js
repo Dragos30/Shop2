@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeProduct } from '../actions/shopActions';
 import Recipe from '../Recipe';
-import ShopContainer from './ShopContainer';
+import ShopMenu from './ShopMenu';
 
 class Shop extends Component {
-
     //to remove the product completely
     handleRemove = (id) => {
         this.props.removeProduct(id);
     }
-
     render() {
         let addedProducts = this.props.products.length ?(
                 this.props.products.map( product => {
@@ -35,16 +33,18 @@ class Shop extends Component {
             (
                 <h1>Nothing in your Shop!</h1>
             )
+        
         return (
-            <ShopContainer>
-                <div>
+            <div className="shop">
+                <ShopMenu />
+                <div className="addedProducts-container">
                     {addedProducts}
                 </div>
-                <div>
-                    <Recipe/>
-                </div>
-            </ShopContainer>
-        )
+            
+                <Recipe />   
+
+            </div>    
+        );
     }
 }
 

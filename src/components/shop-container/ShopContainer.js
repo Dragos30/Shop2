@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import ShopMenu from "./ShopMenu";
-import Shop from './Shop';
 
 class ShopContainer extends Component {
     render() {
         return (
             <div>
-                <Shop/>
                 <ShopMenu handleMouseDown={this.handleMouseDown}
                     menuVisibility={this.state.visible} />  
             </div>

@@ -14,7 +14,7 @@ import SearchBar from './components/SearchBar/SearchBar';
 import ImageList from './components/SearchBar/ImageList';
 import ShowProduct from './components/data/ShowProduct';
 import Header from './components/BaseLayout/Header';
-import ShopContainer from './components/shop-container/ShopContainer';
+import Shop from './components/shop-container/Shop';
 
 class App extends React.Component {
   state = { images: [] };
@@ -42,7 +42,7 @@ class App extends React.Component {
           <Nature path="/nature" exact component={Nature} />
           <Abstract path="/abstract" exact component={Abstract} />
           <ShowProduct path="/products/:id" component={ShowProduct} /> 
-          <ShopContainer path="/shop" exact component={ShopContainer} />
+          <Shop path="/shop" exact component={Shop} />
         </Router>
         <Footer />
       </div>

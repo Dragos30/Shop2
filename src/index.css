@@ -2,10 +2,16 @@ body{
   background-color: aliceblue;
   background-size: contain;
 }
-#about,#portfolio,#contact,#home,#nature,#abstract,#portraits,#shop{
+#about,#portfolio,#contact,#home,#nature,#abstract,#portraits{
   width: 100%;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.addedProducts-container{
+   width: 100%;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
