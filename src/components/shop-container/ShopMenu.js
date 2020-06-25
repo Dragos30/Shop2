@@ -15,7 +15,7 @@ const ShopMenu = () => {
                 <Link to={"/shop"}>
                     Wish List
                                 </Link>
-                <Link to={"/"}>
+                <Link to={"/login"}>
                     Account
                                 </Link>
                 <Link to={"/"}>

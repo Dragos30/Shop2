@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { removeProduct } from '../actions/shopActions';
 import Recipe from '../Recipe';
 import ShopMenu from './ShopMenu';
+import FlipMove from 'react-flip-move';
+import Slide from 'react-reveal/Slide';
+
 
 class Shop extends Component {
     //to remove the product completely
@@ -13,6 +16,7 @@ class Shop extends Component {
         let addedProducts = this.props.products.length ?(
                 this.props.products.map( product => {
                     return (
+                       
                         <div className="wrapper" key={product.id} >
                             <div className="imgContainer">
                                 <img alt={product.title} src={product.img} />
@@ -26,6 +30,7 @@ class Shop extends Component {
                             </div>
                         </div>
                         
+                        
                     )
                 })
             ) :
@@ -36,13 +41,16 @@ class Shop extends Component {
         
         return (
             <div className="shop">
-                <ShopMenu />
-                <div className="addedProducts-container">
-                    {addedProducts}
-                </div>
-            
+                <ShopMenu />   
+                <Slide left cascade>
+                    <h1>Wish List</h1>
+                    <div className="addedProducts-container">
+                    <FlipMove duration={250} easing="ease-out">
+                        {addedProducts}
+                    </FlipMove>
+                    </div> 
+                </Slide>
                 <Recipe />   
-
             </div>    
         );
     }

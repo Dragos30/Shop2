@@ -39,6 +39,11 @@ class Menu extends Component {
                         Acrylic
                                 </Link>
                 </li>
+                <li >
+                    <Link to={"/login"}>
+                        <i className="user circle icon">Login</i>  
+                                </Link>
+                </li>
             </ul>
         );
     }

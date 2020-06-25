@@ -1,7 +1,9 @@
 // Dependencies
 import React, { Component } from 'react';
 // Externals
-import './header.css';
+import MenuContainer from './components/menu-container/MenuContainer';
+import Header from './components/Header';
+import './index.css';
 
 const classNames = [
   "first-header",
@@ -33,10 +35,13 @@ export default class BaseLayout extends Component {
     return(
       <div>
         <div className={className}>
+          <MenuContainer/>
+          <Header />
         </div>
         <div className="content">
           {this.props.children}
         </div>
+       
       </div>
     )
   }

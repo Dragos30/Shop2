@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToShop } from '../actions/shopActions';
 import ImageList from '../SearchBar/ImageList';
+import Slide from 'react-reveal/Slide';
 
 class Portfolio extends Component {
   state = { images: [] };
@@ -36,14 +37,16 @@ class Portfolio extends Component {
 
     })
     return (
-      < div id="home" >
+      < div id="portfolio">
+        <Slide left cascade>
         <div className="container">
           <h1 className="center">Mixed Paintings</h1>
           <div className="box">
             {productsList}
           </div>
           <ImageList images={this.state.images} />
-        </div>
+          </div>
+          </Slide>
       </ div>
     )
   }

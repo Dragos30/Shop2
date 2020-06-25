@@ -16,9 +16,10 @@
 .toggle-button_line{
   width: 30px;
   height: 3px;
-  background: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
 }
 .toggle-button_line>p{
+  color: #ffffff;
   margin-left: 30px;
   margin-top: 0; 
   font-weight: 800;

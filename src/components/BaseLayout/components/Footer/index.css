@@ -1,0 +1,32 @@
+.footer {
+  max-width: 2400px;
+  min-width: 380px;
+  width: auto;
+  display: flex;
+  background-color: black;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: lighter;
+  justify-content: space-around;
+}
+.footer img{
+  height: 40px;
+}
+#footer-image{
+  height: 70px;
+  border: 1px solid aliceblue;
+}
+.footer p{
+    font-size: xx-small;
+    color: aliceblue;
+    margin: 5px 5px;
+}
+.grid{ 
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0%;
+  margin: 5% 5%;
+}

@@ -1,20 +1,20 @@
 import React from 'react';
 import { Router } from "@reach/router";
 import Home from "./components/pages-container/Home";
-import MenuContainer from "./components/menu-container/MenuContainer";
 import About from "./components/pages-container/About";
 import Portfolio from "./components/pages-container/Portfolio";
 import Contact from "./components/pages-container/Contact";
 import Categories from "./components/categories-container/Categories";
 import Nature from "./components/categories-container/Nature";
 import Abstract from "./components/categories-container/Abstract";
-import Footer from "./components/pages-container/Footer";
 import unsplash from './components/api/unsplash';
 import SearchBar from './components/SearchBar/SearchBar';
 import ImageList from './components/SearchBar/ImageList';
 import ShowProduct from './components/data/ShowProduct';
-import Header from './components/BaseLayout/Header';
 import Shop from './components/shop-container/Shop';
+import BaseLayout from './components/BaseLayout';
+import Footer from './components/BaseLayout/components/Footer';
+
 
 class App extends React.Component {
   state = { images: [] };
@@ -26,12 +26,13 @@ class App extends React.Component {
 
     this.setState({ images: response.data.results });
   }
+  
   render() {
+   
     return (
       <div className="App">
-        <MenuContainer />
+        <BaseLayout/>
         <SearchBar onSubmit={this.onSearchSubmit} />
-        <Header/>
         <Categories />
         <ImageList images={this.state.images} />
         <Router>
@@ -41,12 +42,13 @@ class App extends React.Component {
           <Contact path="/contact" exact component={Contact} />
           <Nature path="/nature" exact component={Nature} />
           <Abstract path="/abstract" exact component={Abstract} />
-          <ShowProduct path="/products/:id" component={ShowProduct} /> 
+          <ShowProduct path="/products/:id" component={ShowProduct} />
           <Shop path="/shop" exact component={Shop} />
         </Router>
-        <Footer />
-      </div>
+ <Footer/>
+      </div>            
     );
   }
 }
+
 export default App;

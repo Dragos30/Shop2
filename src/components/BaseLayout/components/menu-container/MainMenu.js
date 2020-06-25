@@ -32,10 +32,11 @@ class MainMenu extends React.Component {
                             Acrylic
                                 </Link>
                     </li>
-                    {/* <li>
-                        <SearchBar onSubmit={this.onSearchSubmit} />
-                    </li> */}
-
+                    <li >
+                        <Link to={"/login"}>
+                            <i className="user circle icon">Login</i>                          
+                                </Link>
+                    </li>
                 </ul>
             </nav>
         );
