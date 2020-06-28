@@ -1,34 +1,75 @@
-//Dependencies
 import React, { Component } from 'react';
-import find from 'lodash/find';
-//Internals
-import products from '../data/products';
+import { connect } from 'react-redux';
+import { addToShop } from '../actions/shopActions';
+import product from '../data/products';
 
 class ShowProduct extends Component {
+  state = { images: [] };
+  handleClick = (id) => {
+    this.props.addToShop(id);
+  }
   render() {
-    const product = find(products, ['id', parseInt(this.props.match.params.id)]);
-    const currentProduct = product; 
-    if (product.category === currentProduct.category
-      && product.type === currentProduct.type
-      && product.title !== currentProduct.title) {
-      return (
-        <div className="show-product">
-          <div className="wrapper">
+    // const category = ['nature', 'abstract'];
+    // const type = ['oil', 'acrylic', 'mixed'];
+    let productsList = this.props.products.map(product => {
+      // if (
+      //   product.category !== category
+      //   && product.type !== type) {
+        return (
+          <div className="wrapper" key={product.id} >
             <div className="star-frame">
               <i className="star outline icon"></i>
             </div>
             <div className="imgContainer">
-              <img className="product-image" src={currentProduct.img} alt="product" />
-              <span className="card-title"><b><h3>{currentProduct.title}</h3></b></span>
+              <img alt={product.title} src={product.img} />
+              <span className="card-title"><b><h3>{product.title}</h3></b>
+              </span>
+              <span to="/" className="i-frame">
+                <span className="i-frame" onClick={() => { this.handleClick(product.id) }}>
+                  <i className="plus icon"></i>
+                </span>
+              </span>
             </div>
             <div className="text">
-              <p>{currentProduct.desc}</p>
-              <p><b>Price: {currentProduct.price}$</b></p>
+              <p>{product.type}</p>
+              <p>{product.category}</p>
+              <p>{product.desc}</p>
+              <p><b>Price: {product.price}$</b></p>
             </div>
           </div>
-        </div>
-      );
+        )
+      })
+      return (
+        < div id="showproduct" >
+          <div className="box">
+            {productsList}
+          </div>
+        </ div>
+      )
     }
   }
-}     
-export default ShowProduct;
+
+const mapStateToProps = (state, {location = {}}) => {
+  const urlParams = new URLSearchParams(location.search);
+  const category = urlParams.get('category');
+ console.log("category ", category);
+  const type = urlParams.get('type');
+ console.log("type ", type);
+
+  return {
+    products: state.products.filter(product => {
+      if (category && type) return category === product.category && type === product.type;
+      if (category) return category === product.category;
+      if (type) return type === product.type;
+      return product;
+    })
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+
+  return {
+    addToShop: (id) => { dispatch(addToShop(id)) }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShowProduct);

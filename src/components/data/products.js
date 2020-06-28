@@ -31,21 +31,21 @@ import product30 from '../Assets/Worlds End.jpg'
 
 const products = {
     products: [
-        { id: 1, title: 'Beach',category: "nature",type: "oil",desc: "21,0 x 29,7 cm",price: 110,img: product1},
+        { id: 1, title: 'Beach',category: "nature", type: "oil",desc: "21,0 x 29,7 cm",price: 110,img: product1},
         { id: 2, title: 'Durdle Door', category: "nature", type: "oil", desc: "21,0 x 29,7 cm", price: 80, img: product2 },
         { id: 3, title: 'Exotic Sunset', category: "nature", type: "oil", desc: "21,0 x 29,7 cm", price: 120, img: product3 },
         { id: 4, title: 'FIreplace', category: "nature", type: "oil", desc: "21,0 x 29,7 cm", price: 260, img: product4 },
         { id: 5, title: 'Forest', category: "nature", type: "oil", desc: "21,0 x 29,7 cm", price: 160, img: product5 },
         { id: 6, title: 'From Above', category: "nature", type: "oil", desc: "21,0 x 29,7 cm", price: 90, img: product6 },
         { id: 7, title: 'High in the clouds', category: "nature", type: "oil", desc: "21,0 x 29,7 cm", price: 90, img: product7 },
-        { id: 8, title: 'Melting', category: "abstract", desc: "29,7 x 42,0 cm ", price: 90, img: product8 },
+        { id: 8, title: 'Melting', category: "abstract", type: "acrylic", desc: "29,7 x 42,0 cm ", price: 90, img: product8 },
         { id: 9, title: 'Moonlight', category: "nature", type: "oil", desc: "21,0 x 29,7 cm", price: 90, img: product9 },
         { id: 10, title: 'Yng yang', category: "abstract", type: "oil", desc: "21,0 x 29,7 cm", price: 90, img: product10 },
         { id: 11, title: 'Palm Trees', category: "nature", type: "oil", desc: "21,0 x 29,7 cm", price: 90, img: product11 },
         { id: 12, title: 'The Road', category: "abstract", type: "mixed", desc: "21,0 x 29,7 cm", price: 90, img: product12 },
         { id: 13, title: 'Alone in the sun', category:"nature", type: "mixed",  desc: "21,0 x 29,7 cm", price: 90, img: product13 },
         { id: 14, title: 'The past', category: "abstract", type: "mixed", desc: "21,0 x 29,7 cm", price: 90, img: product14 },
-        { id: 15, title: 'Prague', category: "nature", desc: "29,7 x 42,0 cm ", price: 90, img: product15 },
+        { id: 15, title: 'Prague', category: "nature", type: "acrylic", desc: "29,7 x 42,0 cm ", price: 90, img: product15 },
         { id: 16, title: 'Park way', category: "nature", type: "mixed", desc: "21,0 x 29,7 cm", price: 90, img: product16 },
         { id: 17, title: 'Sunday walk', category: "nature", type: "mixed", desc: "21,0 x 29,7 cm", price: 90, img: product17 },
         { id: 18, title: 'Sunset', category: "nature", type: "mixed", desc: "21,0 x 29,7 cm", price: 90, img: product18 },
@@ -66,4 +66,5 @@ const products = {
     addedProducts: [],
     total: 0
 };
+
 export default products;

@@ -20,22 +20,22 @@ class Menu extends Component {
                                 </Link>
                 </li>
                 <li>
-                    <Link to={"/"}>
+                    <Link to={"/products?"}>
                         Canvas
                                 </Link>
                 </li>
                 <li>
-                    <Link to={"/about"}>
+                    <Link to={"/products?type=oil"}>
                         Oil
                                 </Link>
                 </li>
                 <li >
-                    <Link to={"/portfolio"}>
+                    <Link to={"/products?type=mixed"}>
                         Mixed
                                 </Link>
                 </li>
                 <li >
-                    <Link to={"/contact"}>
+                    <Link to={"/products?type=acrylic"}>
                         Acrylic
                                 </Link>
                 </li>

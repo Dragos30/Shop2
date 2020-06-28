@@ -1,0 +1,9 @@
+form{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+input[type=checkbox], input[type=radio]{
+    margin-left: 20px;
+}

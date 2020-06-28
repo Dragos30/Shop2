@@ -11,10 +11,10 @@ const Categories = () =>  {
                     Categories
         </button>
               <nav className="dropdown-content">
-                    <Link to={"/nature"}>
+                    <Link to="/products?category=nature">
                         Nature
                                 </Link>
-                    <Link to={"/abstract"}>
+                    <Link to="/products?category=abstract">
                         Abstract
                                 </Link>
                 </nav>
