@@ -1,5 +1,5 @@
 import product from '../data/products';
-import { ADD_TO_SHOP, REMOVE_PRODUCT } from '../actions/shop-actions';
+import { ADD_TO_SHOP, REMOVE_PRODUCT, ADD_PRODUCT } from '../actions/shop-actions';
 
 const shopReducer = ( state = product, action) => {
 
@@ -41,6 +41,13 @@ const shopReducer = ( state = product, action) => {
             ...state,
             addedProducts: new_items,
             total: newTotal
+        }
+    }
+
+    if (action.type === ADD_PRODUCT) {
+        return {
+            ...state,
+            products: [...state.products, action.payload]
         }
     }
   

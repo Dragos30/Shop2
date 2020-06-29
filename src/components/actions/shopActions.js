@@ -1,4 +1,4 @@
-import { ADD_TO_SHOP, REMOVE_PRODUCT} from './shop-actions';
+import { ADD_TO_SHOP, REMOVE_PRODUCT, ADD_PRODUCT } from './shop-actions';
 
 export const addToShop= (id)=>{
     return{
@@ -14,3 +14,9 @@ export const removeProduct=(id)=>{
     }
 }
 
+export const addProduct = payload => {
+    return {
+        type: ADD_PRODUCT,
+        payload
+    }
+}

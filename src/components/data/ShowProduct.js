@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToShop } from '../actions/shopActions';
-import product from '../data/products';
 
 class ShowProduct extends Component {
   state = { images: [] };
@@ -9,12 +8,7 @@ class ShowProduct extends Component {
     this.props.addToShop(id);
   }
   render() {
-    // const category = ['nature', 'abstract'];
-    // const type = ['oil', 'acrylic', 'mixed'];
     let productsList = this.props.products.map(product => {
-      // if (
-      //   product.category !== category
-      //   && product.type !== type) {
         return (
           <div className="wrapper" key={product.id} >
             <div className="star-frame">
@@ -40,11 +34,11 @@ class ShowProduct extends Component {
         )
       })
       return (
-        < div id="showproduct" >
+        <div id="showproduct" >
           <div className="box">
             {productsList}
           </div>
-        </ div>
+        </div>
       )
     }
   }
