@@ -8,6 +8,11 @@
    padding: none;
    box-sizing: border-box;
 }
+.showproduct>form{
+    width: 300px;
+    margin: 10px 10px;
+    padding: none;
+}
 form>input{
     margin: 10px 0;
     border-radius: 10px;
@@ -22,17 +27,19 @@ form>input{
     text-align: center;
     width: 130px;
 }
-.showproduct ul>li{
+.productList li{
     color: black;
     text-decoration: none;
     font-size: 0.5rem;
     border-radius: 10px;
     font-weight: 800;
     background-color: #ffffff;
+    background-size: contain;
     text-align: center;
     width: 130px;
     margin: 2px 5px;
     list-style: none;
+    padding: 0%;
 }
 .showproduct span:hover,
 .showproduct span:active{
@@ -47,14 +54,13 @@ form>input{
     cursor: pointer;
 }
 .productList{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    margin: none;
+    padding: none;
 }
 h4{
     margin: 15px 5px;
 }
-#add, #submit{
+#files, #submit{
     color: black;
     text-decoration: none;
     font-size: 0.5rem;
@@ -68,8 +74,10 @@ h4{
 #stats {
     width: 350px;
     height: 380px;
-    background: white;
     position: relative;
+    margin: 10px 100px;
+    background-color: white;
+    background-size: cover;
     border-radius: 10px;
 }
 
@@ -93,6 +101,6 @@ h4{
     height: 100px;
     background-color: yellow;
     border-radius: 100%;
-   position: absolute;
-   margin: 100px;
+    position: absolute;
+    margin: 100px;
 }

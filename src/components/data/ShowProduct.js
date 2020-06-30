@@ -10,7 +10,7 @@ class ShowProduct extends Component {
   render() {
     let productsList = this.props.products.map(product => {
         return (
-          <div className="wrapper" key={product.id} >
+          <div key={product.id} className="wrapper" >
             <div className="star-frame">
               <i className="star outline icon"></i>
             </div>
@@ -46,9 +46,9 @@ class ShowProduct extends Component {
 const mapStateToProps = (state, {location = {}}) => {
   const urlParams = new URLSearchParams(location.search);
   const category = urlParams.get('category');
- console.log("category ", category);
+//  console.log("category ", category);
   const type = urlParams.get('type');
- console.log("type ", type);
+//  console.log("type ", type);
 
   return {
     products: state.products.filter(product => {

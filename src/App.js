@@ -27,7 +27,7 @@ class App extends React.Component {
   render() {
    
     return (
-      <div className="App">
+      <div key={App.Container} className="App">
         <BaseLayout/>
         <SearchBar onSubmit={this.onSearchSubmit} />
         <Categories/>

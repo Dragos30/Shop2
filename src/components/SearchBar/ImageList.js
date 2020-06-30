@@ -1,20 +1,27 @@
 import './ImageList.css';
 import ImageCard from './ImageCard';
-import React from 'react';
+import React, { Component } from 'react';
 
-const ImageList = props => { 
-    const images = props.images.map((image) => {
-        return <ImageCard key={image.id} image={image} />;
-    });
+class ImageList extends Component {
+    state = {
+        show: true,
+    }
 
-    return (
-        <div className="image-list">
-            {images}  
-            <span className="close" >&times;</span>
-        </div>
-    )
-   
-};
-
-
+    toggle = () => this.setState((currentState) => ({ show: !currentState.show }));
+    render() {
+        const images = this.props.images.map((image) => {
+            return (
+                <div>
+                    <ImageCard key={image.id} image={image} />
+                </div>
+            )
+        });
+        return (
+            <div className="imageList">   
+                    <span className="close" onClick={this.toggle}> {this.state.show ? '+' : '+'}</span>
+                    {this.state.show && <div key={ImageList} className="imageContainer">{images}</div>}                             
+            </div>
+        )
+    }
+}
 export default ImageList;

@@ -31,7 +31,14 @@ function Dashboard({ products, onSubmit}) {
 
         event.preventDefault();
     }
-
+    function getBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onLoad = () => resolve(reader.result);
+            reader.onError = error => reject(error);
+        });
+    }
     return (
         <div className="showproduct">           
             <form onSubmit={handleSubmit}>
@@ -41,18 +48,18 @@ function Dashboard({ products, onSubmit}) {
                 <input type="text" placeholder='type' name="productType"/>
                 <input type="text" placeholder='size' name="productSize"/>
                 <input type="text" placeholder='price' name="productPrice"/>
-                <input id="add" type="file" placeholder='image' name="productImage"/>            
+                <input id="files" type="file" placeholder='image' name="productImage" onLoadedData={getBase64}/>            
                 <input id="submit" type="submit" />
             </form>
             <div id="stats">
                 <h4>Statistics</h4>
-                <div id="red"><p>All</p></div>
-                <div id="blue"><p>Abstract</p></div>
-                <div id="yellow"><p>Nature</p></div>
+                <div id="red"><p><b>All</b></p></div>
+                <div id="blue"><p><b>Abstract</b></p></div>
+                <div id="yellow"><p><b>Nature</b></p></div>
             </div>
             {products.map(product =>
-                <ul key={product.id} className="productList">              
-                <li>
+                <ul key={product.ul} className="productList">              
+                    <li>
                     <p>{product.title}</p>
                     <p>{product.type}</p>
                     <p>{product.category}</p>

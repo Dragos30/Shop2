@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Login.css';
 import { Form, Button } from 'react-bootstrap';
 import Slide from 'react-reveal';

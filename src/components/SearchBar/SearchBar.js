@@ -11,8 +11,8 @@ class SearchBar extends React.Component{
     };
     render() {
         return (
-            <div className="ui segment">
-                <form onSubmit={this.onFormSubmit} className="ui-form">
+            <div className="search">
+                <form onSubmit={this.onFormSubmit} className="form">
                     <div className="field">
                         <input
                             placeholder="Search here for inspiration..."
