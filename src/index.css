@@ -33,13 +33,17 @@ div.box{
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.star-frame{
+div.star-frame{
     cursor: pointer;
     display: flex;
     flex-direction: row-reverse;
+    margin-right: 5px;
 }
-.star-frame:hover,
-.star-frame:active{
+div.star-frame:hover,
+div.star-frame:active{
+    color: gold;
+}
+.checked{
     color: gold;
 }
 .i-frame{
@@ -71,6 +75,7 @@ h1,p{
 }
 .wrapper{
     width: 300px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
@@ -85,6 +90,7 @@ h1,p{
     display: flex;
     flex-direction: column;
     height: 200px;
+    width: 300px;
     margin: auto;
     padding: 10px 30px;
     justify-content: space-around;

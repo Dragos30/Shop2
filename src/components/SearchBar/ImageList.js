@@ -18,7 +18,7 @@ class ImageList extends Component {
         });
         return (
             <div className="imageList">   
-                    <span className="close" onClick={this.toggle}> {this.state.show ? '+' : '+'}</span>
+                    <span className="close" onClick={this.toggle}>{this.state.show ? '+' : '+'}</span>
                     {this.state.show && <div key={ImageList} className="imageContainer">{images}</div>}                             
             </div>
         )

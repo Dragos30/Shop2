@@ -1,19 +1,32 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToShop } from '../actions/shopActions';
+import ReviewModal from '../Review/ReviewModal';
 
 class ShowProduct extends Component {
   state = { images: [] };
+  state = { color: [] };
+  state = {
+    show: false
+  }
+  showModal = e => {
+    this.setState({
+      show: !this.state.show,
+    });
+  };
   handleClick = (id) => {
     this.props.addToShop(id);
   }
-  render() {
+  render() {    
     let productsList = this.props.products.map(product => {
-        return (
-          <div key={product.id} className="wrapper" >
-            <div className="star-frame">
-              <i className="star outline icon"></i>
-            </div>
+      return (
+        <div className="wrapper" key={product.id}>
+          <div className="star-frame">          
+            <span onClick={e => {
+              this.showModal(e);
+            }}
+            ><i className="fa fa-star-o" aria-hidden="true"></i></span>         
+          </div>
             <div className="imgContainer">
               <img alt={product.title} src={product.img} />
               <span className="card-title"><b><h3>{product.title}</h3></b>
@@ -23,17 +36,18 @@ class ShowProduct extends Component {
                   <i className="plus icon"></i>
                 </span>
               </span>
-            </div>
+          </div>
             <div className="text">
               <p>{product.type}</p>
               <p>{product.category}</p>
               <p>{product.desc}</p>
               <p><b>Price: {product.price}$</b></p>
-            </div>
+          </div>
+          <ReviewModal onClose={this.showModal} show={this.state.show} />
           </div>
         )
-      })
-      return (
+    })
+    return (
         <div id="showproduct" >
           <div className="box">
             {productsList}
@@ -41,15 +55,13 @@ class ShowProduct extends Component {
         </div>
       )
     }
-  }
-
-const mapStateToProps = (state, {location = {}}) => {
+}
+const mapStateToProps = (state, { location = {} }) => {
   const urlParams = new URLSearchParams(location.search);
   const category = urlParams.get('category');
-//  console.log("category ", category);
+console.log("category ", category);
   const type = urlParams.get('type');
-//  console.log("type ", type);
-
+  console.log("type ", type);
   return {
     products: state.products.filter(product => {
       if (category && type) return category === product.category && type === product.type;
@@ -62,7 +74,9 @@ const mapStateToProps = (state, {location = {}}) => {
 const mapDispatchToProps = (dispatch) => {
 
   return {
-    addToShop: (id) => { dispatch(addToShop(id)) }
+    addToShop: (id) => {
+      dispatch(addToShop(id))
+    }
   }
 }
 

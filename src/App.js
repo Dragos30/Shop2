@@ -11,10 +11,12 @@ import Footer from './components/BaseLayout/components/Footer';
 import Dashboard from './components/Dashboard/Dashboard';
 import Login from './components/pages-container/Login';
 import Home from './components/pages-container/Home';
+import ReviewModal from './components/Review/ReviewModal';
 
 
 class App extends React.Component {
   state = { images: [] };
+
 
   onSearchSubmit = async (term) => {
     const response = await unsplash.get('/search/photos', {
@@ -25,16 +27,16 @@ class App extends React.Component {
   }
   
   render() {
-   
     return (
       <div key={App.Container} className="App">
-        <BaseLayout/>
+        <BaseLayout />
         <SearchBar onSubmit={this.onSearchSubmit} />
-        <Categories/>
+        <Categories />
         <ImageList images={this.state.images} />
         <Router>
           <Login path="/login" exact component={Login} />
-          <Home path="/" exact component={Home}/>
+          <Home path="/" exact component={Home} />
+          <ReviewModal path="/reviewModal" exact component={ReviewModal}/>
           <Dashboard path="/dashboard" exact component={Dashboard}/>
           <ShowProduct path="/products" component={ShowProduct}/> 
           <Shop path="/shop" exact component={Shop} />

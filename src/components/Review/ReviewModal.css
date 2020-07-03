@@ -1,0 +1,55 @@
+#reviewModal{
+    height: 80vh;
+    background: rgba(0, 112, 156, 0.116);
+    border-radius: 10px;
+    position: fixed;
+    top: 10%;
+    left: 230px;
+    transition: transform .5s cubic-bezier(0, .52, 0, 1); 
+    max-width: 500px;
+    z-index: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: none;
+}
+#reviewModal form{
+    display: flex;
+    flex-direction: column;
+}
+#reviewModal input{
+    margin: 10px auto;
+    background-color: #ffff;
+}
+#reviewModal input:hover,
+#reviewModal input:active{
+    background-color: black;
+    color: #ffff;
+}
+ #reviewModal.hide{
+ transform: translate3d(-100vw, 0, 0);
+}
+#reviewModal.show{
+ transform: translate3d(0vw, 0, 0);
+  overflow: hidden;
+} 
+textarea{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin: auto;
+}
+.closebtn{
+    font-size: 1rem;
+    font-weight: 800;
+    background: transparent;
+    border: none;
+    width: 20px;
+    margin: auto;
+    box-shadow: none;
+}
+.closebtn:hover,
+.closebtn:active{
+    color: gold;
+}

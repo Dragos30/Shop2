@@ -31,7 +31,7 @@ import product30 from '../Assets/Worlds End.jpg'
 
 const products = {
     products: [
-        { id: 1, title: 'Beach',category: "nature", type: "oil",desc: "21,0 x 29,7 cm",price: 110,img: product1},
+        { id: 1, title: 'Beach', category: "nature", type: "oil", desc: "21,0 x 29,7 cm", price: 110, img: product1 },
         { id: 2, title: 'Durdle Door', category: "nature", type: "oil", desc: "21,0 x 29,7 cm", price: 80, img: product2 },
         { id: 3, title: 'Exotic Sunset', category: "nature", type: "oil", desc: "21,0 x 29,7 cm", price: 120, img: product3 },
         { id: 4, title: 'FIreplace', category: "nature", type: "oil", desc: "21,0 x 29,7 cm", price: 260, img: product4 },
@@ -43,7 +43,7 @@ const products = {
         { id: 10, title: 'Yng yang', category: "abstract", type: "oil", desc: "21,0 x 29,7 cm", price: 90, img: product10 },
         { id: 11, title: 'Palm Trees', category: "nature", type: "oil", desc: "21,0 x 29,7 cm", price: 90, img: product11 },
         { id: 12, title: 'The Road', category: "abstract", type: "mixed", desc: "21,0 x 29,7 cm", price: 90, img: product12 },
-        { id: 13, title: 'Alone in the sun', category:"nature", type: "mixed",  desc: "21,0 x 29,7 cm", price: 90, img: product13 },
+        { id: 13, title: 'Alone in the sun', category: "nature", type: "mixed", desc: "21,0 x 29,7 cm", price: 90, img: product13 },
         { id: 14, title: 'The past', category: "abstract", type: "mixed", desc: "21,0 x 29,7 cm", price: 90, img: product14 },
         { id: 15, title: 'Prague', category: "nature", type: "acrylic", desc: "29,7 x 42,0 cm ", price: 90, img: product15 },
         { id: 16, title: 'Park way', category: "nature", type: "mixed", desc: "21,0 x 29,7 cm", price: 90, img: product16 },
@@ -59,12 +59,14 @@ const products = {
         { id: 26, title: 'The shine', category: "abstract", type: "acrylic", desc: "29,7 x 42,0 cm ", price: 90, img: product26 },
         { id: 27, title: 'The spartan', category: "abstract", type: "acrylic", desc: "29,7 x 42,0 cm ", price: 90, img: product27 },
         { id: 28, title: 'Waterfall', category: "abstract", type: "mixed", desc: "21,0 x 29,7 cm", price: 90, img: product28 },
-        { id: 29, title: 'Winter world', category: "abstract", type: "acrylic",desc: "29,7 x 42,0 cm ", price: 90, img: product29 },
+        { id: 29, title: 'Winter world', category: "abstract", type: "acrylic", desc: "29,7 x 42,0 cm ", price: 90, img: product29 },
         { id: 30, title: 'Worlds end', category: "abstract", type: "acrylic", desc: "29,7 x 42,0 cm Canvas board ", price: 90, img: product30 },
-   
     ],
+    
     addedProducts: [],
+    
     total: 0
 };
 
+   
 export default products;

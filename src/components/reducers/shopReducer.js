@@ -1,5 +1,5 @@
 import product from '../data/products';
-import { ADD_TO_SHOP, REMOVE_PRODUCT, ADD_PRODUCT } from '../actions/shop-actions';
+import { ADD_TO_SHOP, REMOVE_PRODUCT, ADD_PRODUCT, REMOVE_ITEM } from '../actions/shop-actions';
 
 const shopReducer = ( state = product, action) => {
 
@@ -44,14 +44,22 @@ const shopReducer = ( state = product, action) => {
         }
     }
 
-    if (action.type === ADD_PRODUCT) {
-        return {
-            ...state,
-            products: [...state.products, action.payload]
+    if (action.type === ADD_PRODUCT) {   
+            console.log(state.products)
+            return {
+                ...state, 
+                products: [...state.products, action.payload]
+            }
         }
-    }
-  
+    
+        if (action.type === REMOVE_ITEM){
+            let new_product = state.products.filter(product => action.payload !== product.payload)
+            console.log(new_product)
+            return {
+                ...state,
+                new_product: [...state.new_product, action.payload]
+            }
+        }
         return state;
-
-}
+    }
 export default shopReducer;
