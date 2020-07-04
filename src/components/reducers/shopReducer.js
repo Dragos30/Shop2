@@ -44,22 +44,20 @@ const shopReducer = ( state = product, action) => {
         }
     }
 
-    if (action.type === ADD_PRODUCT) {   
-            console.log(state.products)
+    if (action.type === ADD_PRODUCT) {  
             return {
                 ...state, 
-                products: [...state.products, action.payload]
+                products: [...state.products, action.id]
             }
-        }
-    
-        if (action.type === REMOVE_ITEM){
-            let new_product = state.products.filter(product => action.payload !== product.payload)
-            console.log(new_product)
+    }
+    if (action.type === REMOVE_ITEM) {
             return {
                 ...state,
-                new_product: [...state.new_product, action.payload]
-            }
+            products: state.products.filter(product => product.id !== action.id)
+        };
+
         }
+
         return state;
     }
 export default shopReducer;

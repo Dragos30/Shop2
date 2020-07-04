@@ -39,7 +39,9 @@ function Dashboard({ products, onSubmit }) {
         }
         reader.readAsDataURL(file);
     }
-
+    function handleRemove(id) {
+        removeItem({ type: 'REMOVE_ITEM', id })
+    }
         return (
             <div className="showproduct">
                 <form onSubmit={handleSubmit}>
@@ -60,15 +62,15 @@ function Dashboard({ products, onSubmit }) {
                     <div id="yellow"><p><b>Nature</b></p></div>
                 </div>
                 {products.map(product =>
-                    <ul key={product.title} className="productList">
-                        <li>
+                    <ul key={product.id} className="productList">
+                        <li key={product.list} id={product.list} >
                             <p>{product.title}</p>
                             <p>{product.type}</p>
                             <p>{product.category}</p>
                             <p>{product.desc}</p>
                             <p><b>Price:{product.price}$</b></p>
                             <img alt={product.title} src={product.img} />
-                            <button className="ui red button" onClick={()=>{removeItem(product)}}>Remove</button>
+                            <button className="ui red button" onClick={()=>{handleRemove(product.id)}}>Remove</button>
                         </li>
                     </ul>)}
             </div>
@@ -79,8 +81,8 @@ const mapStateToProps = state => ({
     products: state.products
 })
 const mapDispatchToProps = dispatch => ({
-    onSubmit: payload => dispatch(addProduct(payload)),
-    removeItem: payload => dispatch(removeItem(payload))
+    onSubmit: id => dispatch(addProduct(id)),
+    handleRemove: id => dispatch(removeItem(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps) (Dashboard);

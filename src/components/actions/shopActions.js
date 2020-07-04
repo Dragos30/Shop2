@@ -14,15 +14,15 @@ export const removeProduct=(id)=>{
     }
 }
 
-export const addProduct = payload => {
+export const addProduct = id => {
     return {
         type: ADD_PRODUCT,
-        payload
+        id
     }
 }
-export const removeItem = payload => {
+export const removeItem = id => {
     return {
         type: REMOVE_ITEM,
-        payload     
+        id    
     }
 }
