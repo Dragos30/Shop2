@@ -3,13 +3,15 @@ import './Dashboard.css';
 import { connect } from 'react-redux'; 
 import { addProduct, removeItem } from '../actions/shopActions';
 
-function Dashboard({ products, onSubmit }) {
+function Dashboard({ products, onSubmit, handleRemove }) {
     const [imageBase64, setImageBase64] = useState('');
     // până acum am luat datele din store și le-am afișat mai jos pe linia 24
     // acum am adăugat un formular, și vrem să adăugăm un nou produs în store
     const handleSubmit = event =>{
 
         const { productName, productCategory, productType, productPrice, productSize, productId } = event.target;
+
+        console.log("productName", productName.value);
         console.log("productCategory", productCategory.value);
         console.log("productType ", productType.value);
         console.log("productSize ", productSize.value);
@@ -26,9 +28,19 @@ function Dashboard({ products, onSubmit }) {
             img: imageBase64
         });
         
+        handleRemove({
+            id: Date.now(),
+            title: productName.value,
+            type: productType.value,
+            category: productCategory.value,
+            desc: productSize.value,
+            price: parseInt(productPrice.value),
+            img: imageBase64
+        });
             event.preventDefault();
         
     }
+       
     
     function encodeImageFileAsURL(element) {
         const file = element.target.files[0];
@@ -37,10 +49,6 @@ function Dashboard({ products, onSubmit }) {
             setImageBase64(reader.result)
         }
         reader.readAsDataURL(file);
-    }
-    function handleRemove(id) {
-        removeItem(id)
-        
     }
         return (
             <div className="showproduct">
@@ -63,7 +71,7 @@ function Dashboard({ products, onSubmit }) {
                 </div>
                 {products.map(product =>
                     <ul key={product.id} className="productList">
-                        <li key={product.list} id={product.list} >
+                        <li key={product.list} id={product.list}>
                             <p>{product.title}</p>
                             <p>{product.type}</p>
                             <p>{product.category}</p>
