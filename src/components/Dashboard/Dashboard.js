@@ -10,7 +10,6 @@ function Dashboard({ products, onSubmit }) {
     const handleSubmit = event =>{
 
         const { productName, productCategory, productType, productPrice, productSize, productId } = event.target;
-        
         console.log("productCategory", productCategory.value);
         console.log("productType ", productType.value);
         console.log("productSize ", productSize.value);
@@ -40,7 +39,8 @@ function Dashboard({ products, onSubmit }) {
         reader.readAsDataURL(file);
     }
     function handleRemove(id) {
-        removeItem({ type: 'REMOVE_ITEM', id })
+        removeItem(id)
+        
     }
         return (
             <div className="showproduct">
@@ -70,7 +70,7 @@ function Dashboard({ products, onSubmit }) {
                             <p>{product.desc}</p>
                             <p><b>Price:{product.price}$</b></p>
                             <img alt={product.title} src={product.img} />
-                            <button className="ui red button" onClick={()=>{handleRemove(product.id)}}>Remove</button>
+                            <button className="ui red button" onClick={()=>handleRemove(product.id)}>Remove</button>
                         </li>
                     </ul>)}
             </div>
@@ -81,7 +81,7 @@ const mapStateToProps = state => ({
     products: state.products
 })
 const mapDispatchToProps = dispatch => ({
-    onSubmit: id => dispatch(addProduct(id)),
+    onSubmit: payload => dispatch(addProduct(payload)),
     handleRemove: id => dispatch(removeItem(id))
 })
 
