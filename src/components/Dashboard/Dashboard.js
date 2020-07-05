@@ -3,7 +3,7 @@ import './Dashboard.css';
 import { connect } from 'react-redux'; 
 import { addProduct, removeItem } from '../actions/shopActions';
 
-function Dashboard({ products, onSubmit }) {
+function Dashboard({ products, onSubmit, handleRemove }) {
     const [imageBase64, setImageBase64] = useState('');
     // până acum am luat datele din store și le-am afișat mai jos pe linia 24
     // acum am adăugat un formular, și vrem să adăugăm un nou produs în store
@@ -38,10 +38,7 @@ function Dashboard({ products, onSubmit }) {
         }
         reader.readAsDataURL(file);
     }
-    function handleRemove(id) {
-        removeItem(id)
-        
-    }
+    
         return (
             <div className="showproduct">
                 <form onSubmit={handleSubmit}>
