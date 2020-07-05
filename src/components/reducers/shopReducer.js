@@ -53,7 +53,7 @@ const shopReducer = ( state = product, action) => {
     if (action.type === REMOVE_ITEM) {
             return {
                 ...state,
-                products: [...state.products.filter(product => product.id !== action.id)]
+                products: [...state.products.filter(product => product.id !== action.payload)]
         };
 
         }

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import './Dashboard.css';
 import { connect } from 'react-redux'; 
 import { addProduct, removeItem } from '../actions/shopActions';
+import './Dashboard.css';
 
 function Dashboard({ products, onSubmit, handleRemove }) {
     const [imageBase64, setImageBase64] = useState('');
@@ -19,16 +19,6 @@ function Dashboard({ products, onSubmit, handleRemove }) {
         console.log("productId", productId.value);
     
         onSubmit({
-            id: Date.now(),
-            title: productName.value,
-            type: productType.value,
-            category: productCategory.value,
-            desc: productSize.value,
-            price: parseInt(productPrice.value),
-            img: imageBase64
-        });
-        
-        handleRemove({
             id: Date.now(),
             title: productName.value,
             type: productType.value,
@@ -71,7 +61,7 @@ function Dashboard({ products, onSubmit, handleRemove }) {
                 </div>
                 {products.map(product =>
                     <ul key={product.id} className="productList">
-                        <li key={product.list} id={product.list}>
+                        <li key={product.list} id={product.list} onChange={handleRemove}>
                             <p>{product.title}</p>
                             <p>{product.type}</p>
                             <p>{product.category}</p>
@@ -93,4 +83,4 @@ const mapDispatchToProps = dispatch => ({
     handleRemove: id => dispatch(removeItem(id))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps) (Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
