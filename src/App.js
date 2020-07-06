@@ -31,13 +31,14 @@ class App extends React.Component {
       <div key={App.Container} className="App">
         <BaseLayout />
         <SearchBar onSubmit={this.onSearchSubmit} />
+        <ReviewModal/>
         <Categories />
         <ImageList images={this.state.images} />
         <Router>
           <Login path="/login" exact component={Login} />
           <Home path="/" exact component={Home} />
           <ReviewModal path="/reviewModal" exact component={ReviewModal}/>
-          <Dashboard path="/dashboard" exact component={Dashboard}/>
+          <Dashboard path="/dashboard" exact component={Dashboard} />
           <ShowProduct path="/products" component={ShowProduct}/> 
           <Shop path="/shop" exact component={Shop} />
         </Router>

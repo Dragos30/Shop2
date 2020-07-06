@@ -1,32 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToShop } from '../actions/shopActions';
-import ReviewModal from '../Review/ReviewModal';
 
 class ShowProduct extends Component {
   state = { images: [] };
   state = { color: [] };
-  state = {
-    show: false
-  }
-  showModal = e => {
-    this.setState({
-      show: !this.state.show,
-    });
-  };
   handleClick = (id) => {
     this.props.addToShop(id);
   }
   render() {    
+  
     let productsList = this.props.products.map(product => {
       return (
         <div className="wrapper" key={product.id}>
-          <div className="star-frame">          
-            <span onClick={e => {
-              this.showModal(e);
-            }}
-            ><i className="fa fa-star-o" aria-hidden="true"></i></span>         
-          </div>
+          {/* <div className="star-frame">          
+            <span><i className="fa fa-star-o" aria-hidden="true"></i></span>         
+          </div> */}
             <div className="imgContainer">
               <img alt={product.title} src={product.img} />
               <span className="card-title"><b><h3>{product.title}</h3></b>
@@ -43,7 +32,8 @@ class ShowProduct extends Component {
               <p>{product.desc}</p>
               <p><b>Price: {product.price}$</b></p>
           </div>
-          <ReviewModal onClose={this.showModal} show={this.state.show} />
+          <div>
+          </div>
           </div>
         )
     })

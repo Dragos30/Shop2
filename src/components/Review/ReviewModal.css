@@ -1,18 +1,29 @@
-#reviewModal{
-    height: 80vh;
-    background: rgba(0, 112, 156, 0.116);
-    border-radius: 10px;
-    position: fixed;
-    top: 10%;
-    left: 230px;
-    transition: transform .5s cubic-bezier(0, .52, 0, 1); 
-    max-width: 500px;
-    z-index: 100px;
+.modal-content{
+    position: absolute;
+    z-index: 500;
+    background-color: aliceblue;
+    width: 70%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 16px;
+    left: 15%;
+    top: 30%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    height: 500px;
+} 
+#openReview{
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     justify-content: center;
-    text-align: center;
-    padding: none;
+    margin-top: 50px;
+}
+
+@media (min-width: 600px) {
+    .Modal {
+        width: 500px;
+        left: calc(50% - 250px);
+    }
 }
 #reviewModal form{
     display: flex;

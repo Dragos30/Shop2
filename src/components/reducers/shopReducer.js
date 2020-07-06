@@ -1,7 +1,7 @@
 import product from '../data/products';
 import { ADD_TO_SHOP, REMOVE_PRODUCT, ADD_PRODUCT, REMOVE_ITEM } from '../actions/shop-actions';
 
-const shopReducer = ( state = product, action) => {
+const shopReducer = (state = product, action) => {
 
     //INSIDE HOME COMPONENT
     if (action.type === ADD_TO_SHOP) {
@@ -56,8 +56,8 @@ const shopReducer = ( state = product, action) => {
                 products: [...state.products.filter(product => product.id !== action.payload)]
         };
 
-        }
-
-        return state;
     }
+        return state;
+}
+    
 export default shopReducer;

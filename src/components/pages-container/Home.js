@@ -1,17 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ShowProduct from '../data/ShowProduct';
 import Slide from 'react-reveal';
 
-class Home extends Component {
-    
-    render() {
-        return ( 
-            <Slide left cascade>
-               
-                <ShowProduct/>
-            </Slide>
-        )
-    }
+function Home() {
+    return (       
+        <Slide left cascade>
+            <ShowProduct />
+        </Slide>
+    )
 }
     
 export default Home;

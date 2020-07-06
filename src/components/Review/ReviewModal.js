@@ -1,23 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import './ReviewModal.css';
 import StarRating from "./StarRatings";
+import { Modal } from 'react-bootstrap';
+import ReviewForm from "./ReviewForm";
 
-class ReviewModal extends React.Component {
-    render() {
-        if (!this.props.show) {
-            return this.state;
-        }
-        return (
-            <div id="reviewModal">
-                <h5>Please Leave a Review</h5>
-                <StarRating />
-                <form>
-                <textarea placeholder="Write your review here..." />    
-                    <input type="submit" />
-                </form>
-            </div>
-            
+function ReviewModal() { 
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    return (
+        <>
+            <span id="openReview" onClick={handleShow}>
+                <h5>How was your experience?</h5>
+                <i className="fa fa-star-o" aria-hidden="true"></i></span>      
+                    <Modal show={show} onHide={handleClose}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Please Leave a Review!</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                    <StarRating />
+                </Modal.Body>
+                <ReviewForm/>
+            </Modal>
+        </>
+        
         )
-    }
 }
+
 export default ReviewModal;
