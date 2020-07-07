@@ -10,13 +10,32 @@
     top: 30%;
     box-sizing: border-box;
     transition: all 0.3s ease-out;
-    height: 500px;
+    height: 350px;
 } 
 #openReview{
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
     margin-top: 50px;
+}
+ul.reviewsList{
+    display: flex;
+    flex-direction: row;
+    list-style: none;   
+}
+.reviewList li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #ffffff;
+    margin: 10px auto;
+    border-radius: 10px;
+    width: 350px;
+}
+.reviewList p,h3{
+     font-style: italic;
+     font-size: x-small;
+     margin: 10px 10px;
 }
 
 @media (min-width: 600px) {
