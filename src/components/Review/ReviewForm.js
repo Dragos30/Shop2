@@ -22,7 +22,7 @@ function ReviewForm( reviews, onSubmit) {
         </form>
          {reviews.map(review =>
             <ul key={review.id} className="reviewList">
-                 <li key={review.list}>
+                 <li key={review.list} >
                      <p>{review.text}</p>
                      <p>{review.author}</p>
                 </li>
@@ -31,11 +31,10 @@ function ReviewForm( reviews, onSubmit) {
                </div>
     )
 }   
-const mapStateToProps = state => {
-    return {
-        reviewList: state.reviews.reviewList
-    }
-}
+const mapStateToProps = state => ({
+        reviews: state.reviews
+    })
+
 const mapDispatchToProps = dispatch => ({
     onSubmit: payload  => dispatch(addReview(payload))
 })

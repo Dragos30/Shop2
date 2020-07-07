@@ -1,8 +1,8 @@
 import { ADD_REVIEW } from './review-actions';
 
-export const addReview = review => {
+export const addReview = payload=> {
     return {
         type: ADD_REVIEW,
-        payload: review
+        payload
     }
 }
