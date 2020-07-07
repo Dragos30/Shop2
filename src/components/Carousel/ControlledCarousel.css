@@ -1,4 +1,3 @@
-.carousel-inner{
-    display: flex;
-    flex-direction: row;
+div.box{
+  display: block;
 }

@@ -7,7 +7,7 @@ function ReviewList({ reviews }) {
     return (
         <div>
         {reviews.map(review =>
-                <ul className="box">
+                <ul>
                     <li key={review.list} id={review.list} className="reviews">
                         <span className="reviewsContainer">
                             <h3><b>{review.author}</b></h3>
