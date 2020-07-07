@@ -1,12 +1,18 @@
-import { ADD_REVIEW } from '../actions/review-actions';
- 
-const reviewReducer = (state = review, action) => {
-    if (action.type === ADD_REVIEW)
-        return {
-            ...state,
-            reviews: [...state.review, action.payload]
-        }
-    return state;
+const initialState = {
+    reviews: []
+};
+
+const reviewReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case "ADD_REVIEW":
+            return {
+                ...state,
+                reviews: [...state.reviews, action.payload]
+            };
+        default:
+            return state;
+    }
+
 }
 
 export default reviewReducer;

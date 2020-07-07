@@ -1,38 +1,41 @@
 import React from 'react';
-import { Button, Form } from 'react-bootstrap';
 import { addReview } from '../actions/reviewAction';
 import { connect } from 'react-redux';
 
 function ReviewForm( reviews, onSubmit) {
     const handleSubmit = event => {
-        const { reviewText } = event.target.value;
-        console.log("reviews", reviews.value);
+        const[{ reviewText},{reviewAuthor}]  = event.target.value;
+        console.log("reviewText", reviewText.value);
+        console.log("reviewAuthor", reviewAuthor.value);
         onSubmit({
-            review: reviewText.value
+            text: reviewText.value,
+            author: reviewAuthor.value
         })
         event.preventDefault();
     }
     return (
-        <div>
-        <Form onSubmit={handleSubmit}>
-            <Form.Text as="textarea" rows="3" name="reviewText" placeholder="Type your review here..." >
-            <Button variant="primary" value="submit" type="submit">
-                Submit</Button>
-            </Form.Text>
-        </Form>
+        <div className="reviewForm">
+            <form onSubmit={handleSubmit}> 
+                <input type="text" placeholder='name' name="reviewAuthor" />
+                <input type="text" palceholder='text' name="reviewText" />
+                <input id="submit" type="submit"/>
+        </form>
          {reviews.map(review =>
             <ul key={review.id} className="reviewList">
                  <li key={review.list}>
-                    <p>{review}</p>
+                     <p>{review.text}</p>
+                     <p>{review.author}</p>
                 </li>
             </ul>
         )};
                </div>
     )
 }   
-const mapStateToProps = state => ({
-    reviews: state.reviews
-})
+const mapStateToProps = state => {
+    return {
+        reviewList: state.reviews.reviewList
+    }
+}
 const mapDispatchToProps = dispatch => ({
     onSubmit: payload  => dispatch(addReview(payload))
 })
