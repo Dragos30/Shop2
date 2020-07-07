@@ -53,7 +53,7 @@ console.log("category ", category);
   const type = urlParams.get('type');
   console.log("type ", type);
   return {
-    products: state.products.filter(product => {
+    products: state.products.products.filter(product => {
       if (category && type) return category === product.category && type === product.type;
       if (category) return category === product.category;
       if (type) return type === product.type;

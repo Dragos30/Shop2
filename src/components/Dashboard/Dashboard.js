@@ -76,7 +76,7 @@ function Dashboard({ products, onSubmit, handleRemove }) {
 }
 
 const mapStateToProps = state => ({
-    products: state.products
+    products: state.products.products
 })
 const mapDispatchToProps = dispatch => ({
     onSubmit: payload => dispatch(addProduct(payload)),

@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 
 function ReviewForm( reviews, onSubmit) {
     const handleSubmit = event => {
-        const[{ reviewText},{reviewAuthor}]  = event.target.value;
+        const[{ reviewText },{reviewAuthor}]  = event.target.value;
         console.log("reviewText", reviewText.value);
         console.log("reviewAuthor", reviewAuthor.value);
         onSubmit({
-            text: reviewText.value,
-            author: reviewAuthor.value
+            author: reviewAuthor.value,
+            text: reviewText.value         
         })
         event.preventDefault();
     }
@@ -22,17 +22,17 @@ function ReviewForm( reviews, onSubmit) {
         </form>
          {reviews.map(review =>
             <ul key={review.id} className="reviewList">
-                 <li key={review.list} >
-                     <p>{review.text}</p>
+                 <li key={review.list} id={review.list}>
                      <p>{review.author}</p>
+                     <p>{review.text}</p>
                 </li>
             </ul>
         )};
-               </div>
+        </div>
     )
 }   
 const mapStateToProps = state => ({
-        reviews: state.reviews
+        reviews: state.reviews.reviews
     })
 
 const mapDispatchToProps = dispatch => ({
