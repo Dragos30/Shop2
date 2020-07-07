@@ -37,7 +37,9 @@ ul.reviewsList{
      font-size: x-small;
      margin: 10px 10px;
 }
-
+.carousel-inner {
+    background-color: rgba(0, 0, 0, 0.226);
+}
 @media (min-width: 600px) {
     .Modal {
         width: 500px;

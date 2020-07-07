@@ -15,22 +15,23 @@ function ReviewModal({ reviews }) {
         <>
             <span id="openReview" onClick={handleShow}>
                 <h5>How was your experience?</h5>
-                <i className="fa fa-star-o" aria-hidden="true"></i></span>               
+                    <i className="fa fa-star-o" aria-hidden="true"></i></span>     
+                <Carousel>
             {reviews.map(review =>                
                 <ul className="reviewList">    
                     <li key={review.list} id={review.list}>
-                        <Carousel>
+                        
                             <CarouselItem>                     
                             <h2>Reviews</h2>
                             <h3><b>{review.author}</b></h3>
                                 <p>"{review.text}"</p>               
                         </CarouselItem>
-                        </Carousel>
+                      
                         </li>             
                         </ul>
                   
             )}
-                
+                </Carousel>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Please Leave a Review!</Modal.Title>
