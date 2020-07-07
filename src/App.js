@@ -12,6 +12,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Login from './components/pages-container/Login';
 import Home from './components/pages-container/Home';
 import ReviewModal from './components/Review/ReviewModal';
+import ControlledCarousel from './components/Carousel/ControlledCarousel';
 
 
 class App extends React.Component {
@@ -31,7 +32,8 @@ class App extends React.Component {
       <div key={App.Container} className="App">
         <BaseLayout />
         <SearchBar onSubmit={this.onSearchSubmit} />
-        <ReviewModal/>
+        <ReviewModal />
+        <ControlledCarousel/>
         <Categories />
         <ImageList images={this.state.images} />
         <Router>

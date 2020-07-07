@@ -1,0 +1,29 @@
+.reviews{
+    width: 300px;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    background-size: cover;
+    border-radius: 10px;
+    padding: none;
+}
+.reviewsContainer{
+   display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 300px;
+    margin: 10px 10px;
+    padding: 10px 30px;
+}
+.box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.reviewsContainer p{
+    font-style: italic;
+}
+li{
+    list-style: none;
+}

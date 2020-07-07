@@ -1,13 +1,12 @@
 import React from 'react';
 import ShowProduct from '../data/ShowProduct';
-import Slide from 'react-reveal';
 
-function Home() {
-    return (       
-        <Slide left cascade>
-            <ShowProduct />
-        </Slide>
-    )
-}
-    
+    function Home() {
+        return (
+            <div>             
+                    <ShowProduct />
+                </div>
+        )
+    }
+
 export default Home;
