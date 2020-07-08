@@ -1,28 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import './ReviewList.css'
 
-function ReviewList({ reviews }) {
-
+function ReviewList({ author, stars, text }) {
     return (
-        <div>
-        {reviews.map(review =>
-                <ul>
-                    <li key={review.list} id={review.list} className="reviews">
-                        <span className="reviewsContainer">
-                            <h3><b>{review.author}</b></h3>
-                            <p>"{review.text}"</p>
-                        </span>
-                    </li>
-                </ul>
-            )
-            }
+        <div className="reviews">
+            <span className="reviewsContainer">
+                <h3><b>{author}</b></h3>
+                <p>"{text}"</p>
+                <p>{stars}/5 stars</p>
+            </span>
         </div>
     )
-    }
+}
 
-const mapStateToProps = state => ({
-    reviews: state.reviews.reviews
-})   
- 
-export default connect(mapStateToProps)(ReviewList);
+export default ReviewList;

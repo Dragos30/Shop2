@@ -1,0 +1,29 @@
+.payContainer button:active,
+.payContainer button:hover{
+    background-color: black;
+    color: aliceblue;
+    font-size: 0.5rem;
+    font-weight: 800;
+    list-style: none;
+    border-radius: 10px;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+.payContainer button{
+    color: black;
+    text-decoration: none;
+    font-size: 0.5rem;
+    border-radius: 10px;
+    font-weight: 800;
+    padding: 10px 10px;
+    background-color: #ffffff;
+    background-size: cover;
+    margin: auto;
+}
+.hfDnLf{
+    width: 30px;
+}
+.payContainer i {
+  color: #007ac183;
+  margin: 2px 10px;
+  }

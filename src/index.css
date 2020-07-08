@@ -12,6 +12,7 @@ body{
     background-color: #ffffff;
     text-align: center;
     margin: auto;
+    width: 200px;
 }
 #home, #login{
   width: 100%;
@@ -42,6 +43,9 @@ div.star-frame{
 div.star-frame:hover,
 div.star-frame:active{
     color: gold;
+}
+.productPrice{
+    text-decoration: none;
 }
 .checked{
     color: gold;

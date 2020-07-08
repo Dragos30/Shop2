@@ -30,7 +30,7 @@ class ShowProduct extends Component {
               <p>{product.type}</p>
               <p>{product.category}</p>
               <p>{product.desc}</p>
-              <p><b>Price: {product.price}$</b></p>
+              <p className="productPrice"><b>Price: {product.price}$</b></p>
           </div>
           <div>
           </div>
