@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import { connect } from 'react-redux'; 
 import { addProduct, removeItem } from '../actions/shopActions';
+import MyStockChart from './MyStockChart';
 import './Dashboard.css';
+import PieChart from './PieChart';
 
 function Dashboard({ products, onSubmit, handleRemove }) {
     const [imageBase64, setImageBase64] = useState('');
@@ -52,12 +54,10 @@ function Dashboard({ products, onSubmit, handleRemove }) {
                     <input type="number" placeholder='price' name="productPrice" />
                     <input id="files" type="file" placeholder='image' name="productImage" onChange={encodeImageFileAsURL} />
                     <input id="submit" type="submit" />            
-                </form>
-                <div id="stats">
-                    <h4>Statistics</h4>
-                    <div id="red"><p><b>All</b></p></div>
-                    <div id="blue"><p><b>Abstract</b></p></div>
-                    <div id="yellow"><p><b>Nature</b></p></div>
+                </form>  
+                <div className="stats">
+                    <PieChart/>
+                    <MyStockChart />  
                 </div>
                 {products.map(product =>
                     <ul key={product.id} className="productList">

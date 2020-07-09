@@ -2,7 +2,14 @@ import React from 'react';
 import './PaymentForm.css'
 import PaymentInputs from './PaymentInputs';
 
-function PaymentForm() {
+function PaymentForm(onSubmit) {
+    const handleSubmit = event => {
+        const { productPrice } = event.target;
+        onSubmit({
+            // productPrice: productPrice::before = productPrice::after
+        });
+        event.preventDefault();
+    }
         return (
             <div className="payContainer">
                 <form>                   
@@ -15,7 +22,7 @@ function PaymentForm() {
                         <i className="fa fa-cc-amex"></i>
                         <i className="fa fa-cc-paypal"></i>
                     </span>
-                    <input type="submit" />
+                    <input type="submit" onSubmit={handleSubmit}/>
                 </form>
             </div>
         )

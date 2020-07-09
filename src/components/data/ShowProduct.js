@@ -1,21 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { connect } from 'react-redux';
 import { addToShop } from '../actions/shopActions';
 
 class ShowProduct extends Component {
   state = { images: [] };
   state = { color: [] };
+  
   handleClick = (id) => {
     this.props.addToShop(id);
   }
-  render() {    
-  
-    let productsList = this.props.products.map(product => {
-      return (
-        <div className="wrapper" key={product.id}>
-          {/* <div className="star-frame">          
-            <span><i className="fa fa-star-o" aria-hidden="true"></i></span>         
-          </div> */}
+  render() {
+      let productsList = this.props.products.map(product => {
+        return (
+          <div className="wrapper" key={product.id}>
             <div className="imgContainer">
               <img alt={product.title} src={product.img} />
               <span className="card-title"><b><h3>{product.title}</h3></b>
@@ -25,19 +22,19 @@ class ShowProduct extends Component {
                   <i className="plus icon"></i>
                 </span>
               </span>
-          </div>
+            </div>
             <div className="text">
               <p>{product.type}</p>
               <p>{product.category}</p>
               <p>{product.desc}</p>
               <p className="productPrice"><b>Price: {product.price}$</b></p>
-          </div>
-          <div>
-          </div>
+            </div>
+            <div>
+            </div>
           </div>
         )
-    })
-    return (
+      })
+      return (
         <div id="showproduct" >
           <div className="box">
             {productsList}
@@ -45,7 +42,8 @@ class ShowProduct extends Component {
         </div>
       )
     }
-}
+  }
+
 const mapStateToProps = (state, { location = {} }) => {
   const urlParams = new URLSearchParams(location.search);
   const category = urlParams.get('category');

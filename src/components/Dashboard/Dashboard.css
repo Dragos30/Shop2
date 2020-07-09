@@ -1,16 +1,18 @@
 
 .showproduct{
-   background-color: #001799;
+  background-image: linear-gradient(to right, #00aeff , #12c1c7);
    display: flex;
    flex-direction: row;
    flex-wrap: wrap;
    justify-self: start;
    padding: none;
    box-sizing: border-box;
-}
+   border-radius: 10px;
+   margin: 0 20px;
+} 
 .showproduct>form{
     width: 300px;
-    margin: 10px 10px;
+    margin: 20px 50px;
     padding: none;
 }
 form>input{
@@ -80,36 +82,20 @@ h4{
     width: 130px;
     margin: 20px 10px;
 }
-#stats {
-    width: 350px;
-    height: 400px;
-    position: relative;
-    margin: 10px 190px;
-    background-color: white;
-    background-size: cover;
+.stats{
+    width: 50%;
+    margin: 20px 50px;
+}
+button{
     border-radius: 10px;
+    border: none;
+    background: white;
+     display: flex;
+    margin: 10px auto;
 }
-
-#red {
-    width: 300px;
-    height: 300px;
-    background-color: red;
-    position: absolute;
-    border-radius: 100%;
-}
-#blue{
-    width: 200px;
-    height: 200px;
-    background-color: blue;
-    border-radius: 100%;
-    position: absolute;
-    margin: 50px;
-}
-#yellow{
-    width: 100px;
-    height: 100px;
-    background-color: yellow;
-    border-radius: 100%;
-    position: absolute;
-    margin: 100px;
+button:hover,
+button:active{
+    background: black;
+    color: white;
+   
 }
