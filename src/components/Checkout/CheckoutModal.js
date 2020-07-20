@@ -15,7 +15,7 @@ function CheckoutModal() {
             <Modal className="modal-lg" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
                     <Modal.Title><h5>Please complete your purchase!</h5></Modal.Title>
-                    <i class="fa fa-credit-card" aria-hidden="true"></i>
+                    <i className="fa fa-credit-card" aria-hidden="true"></i>
         </Modal.Header>
         <Modal.Body>
           <PaymentForm/>

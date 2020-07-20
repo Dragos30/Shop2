@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect }  from 'react';
 import './PaymentForm.css'
 import PaymentInputs from './PaymentInputs';
 
 function PaymentForm(onSubmit) {
-    const handleSubmit = event => {
-        const { productPrice } = event.target;
-        onSubmit({
-            // productPrice: productPrice::before = productPrice::after
-        });
-        event.preventDefault();
+    const [isClicked, setIsClicked] = useState(false);
+    function handleClick(){
+        if (isClicked === true) {
+            if (!isClicked) setIsClicked(false);
+        } else {
+            if (!isClicked) setIsClicked(true);
+        }
     }
+      
+
+useEffect(() => {
+    window.addEventListener('click', handleClick);
+
+    return () => {
+        window.removeEventListener('click', handleClick);
+    }
+}, );
         return (
             <div className="payContainer">
-                <form>                   
+                <form onSubmit={handleClick}>                   
                     <input type="text" placeholder="Name on card"/>                 
                     <input type="text" placeholder="Address" />                  
                    <PaymentInputs />                 
@@ -22,7 +32,7 @@ function PaymentForm(onSubmit) {
                         <i className="fa fa-cc-amex"></i>
                         <i className="fa fa-cc-paypal"></i>
                     </span>
-                    <input type="submit" onSubmit={handleSubmit}/>
+                    <input type="submit" value={this.state.handleClick}/>
                 </form>
             </div>
         )

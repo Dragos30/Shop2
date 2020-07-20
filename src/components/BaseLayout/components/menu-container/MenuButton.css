@@ -1,4 +1,4 @@
-.toggle-button{
+button.toggle-button{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -9,6 +9,15 @@
   cursor: pointer;
   padding: 0;
   box-sizing: border-box;
+  margin: 10px 10px;
+}
+button.toggle-button:hover,
+button.toggle-button:active{
+  background: transparent;
+}
+.toggle-button_line:hover,
+.toggle-button_line:active{
+  background: #0000;
 }
 .toggle-button:focus{
   outline: none;
@@ -16,7 +25,7 @@
 .toggle-button_line{
   width: 30px;
   height: 3px;
-  background: rgb(255, 255, 255);
+  background: #ffffff;
 }
 .toggle-button_line>p{
   color: #ffffff;
@@ -25,7 +34,7 @@
   font-weight: 800;
 }
 @media (min-width: 769px){
-  .toggle-button{
+  button.toggle-button{
     display: none;
   }
 }

@@ -4,7 +4,7 @@ import "./Menu.css";
 
 class Menu extends Component {
     render() {
-        var visibility = "hide";
+       let visibility = "hide";
 
         if (this.props.menuVisibility) {
             visibility = "show";
@@ -15,34 +15,34 @@ class Menu extends Component {
                 onMouseDown={this.props.handleMouseDown}
                 className={visibility}>   
                 <li>
-                    <Link to={"/shop"}>
+                    <Link to="/shop">
                         Shop
                                 </Link>
                 </li>
                 <li>
-                    <Link to={"/products?"}>
+                    <Link to="/products?">
                         Canvas
                                 </Link>
                 </li>
                 <li>
-                    <Link to={"/products?type=oil"}>
+                    <Link to="/products?type=oil">
                         Oil
                                 </Link>
                 </li>
                 <li >
-                    <Link to={"/products?type=mixed"}>
+                    <Link to="/products?type=mixed">
                         Mixed
                                 </Link>
                 </li>
                 <li >
-                    <Link to={"/products?type=acrylic"}>
+                    <Link to="/products?type=acrylic">
                         Acrylic
                                 </Link>
                 </li>
                 <li >
-                    <Link to={"/login"}>
-                        <i className="user circle icon">Login</i>  
-                                </Link>
+                    <Link to="/login">
+                        <i className="user circle icon">Login</i>
+                    </Link>
                 </li>
             </ul>
         );

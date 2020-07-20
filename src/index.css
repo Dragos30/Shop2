@@ -14,6 +14,20 @@ body{
     margin: auto;
     width: 200px;
 }
+input.Add{
+    width: 70px;
+    border-radius: 10px;
+    font-size: small;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+}
+.Add:hover,
+.Add:active{
+  color: gold;
+}
 #home, #login{
   width: 100%;
   display: flex;

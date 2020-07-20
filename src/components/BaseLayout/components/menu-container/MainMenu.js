@@ -8,12 +8,12 @@ class MainMenu extends React.Component {
             <nav >
                 <ul id="main">
                     <li>
-                        <Link to={"/shop"}>
+                        <Link to="/shop">
                             Shop
                                 </Link>
                     </li>
                     <li>
-                        <Link to={"/products?"}>
+                        <Link to="/products?">
                             Canvas
                                 </Link>
                     </li>
@@ -33,7 +33,7 @@ class MainMenu extends React.Component {
                                 </Link>
                     </li>
                     <li >
-                        <Link to={"/login"}>
+                        <Link to="/login">
                             <i className="user circle icon">Login</i>                          
                                 </Link>
                     </li>

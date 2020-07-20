@@ -1,44 +1,39 @@
-
-#flyoutMenu {
-  width: 100vh;
-  height: 100vh;
-  background-color: rgba(240, 248, 255, 0.397);
+#flyoutMenu{
+  height: 100%;
+  min-width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 6px 0px;
+  background-color: #acacacce;
   position: fixed;
   top: 0;
   left: 0;
-  transition: transform .5s
-  cubic-bezier(0, .52, 0, 1);
-  overflow: scroll;
-  max-width: 1200px;
+  transition: transform .6s 
+    cubic-bezier(0, .52, 0, 1);
+  overflow-wrap: normal;
   z-index: 1000;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding: none;
 }
-#flyoutMenu i{
-  margin-left: -10px;
+#flyoutMenu.show{
+  transform: translate3d( 0vw, 0, 0);
+  overflow: hidden;
 }
 #flyoutMenu.hide {
-  transform: translate3d(-100vw, 0, 0);
-}
- 
-#flyoutMenu.show {
-  transform: translate3d(0vw, 0, 0);
-  overflow: hidden;
+  transform: translate3d(-120vw, 0, 0);
 } 
 #flyoutMenu li{
   list-style: none;
   margin: 0.5rem 0;
 }
 #flyoutMenu a{
-    color: black;
+    color: #000000;
+    background-color: #ffffff;
     text-decoration: none;
     font-size: 0.3rem;
     border-radius: 10px;
     font-weight: 800;
-    padding: 10px 25px;
+    padding: 10px 35px;
     margin: auto;
 }
 #flyoutMenu a:hover,
@@ -49,57 +44,6 @@
     font-weight: 800;
     list-style: none;
     border-radius: 10px;
-    padding: 10px 25px;
+    padding: 10px 35px;
     text-decoration: none;
 } 
-#flyoutMenu button{
-  width: 10px;
-  background-color: transparent;
-  position: absolute;
-  justify-self: flex-end;
-  margin: 55px 0;
-  margin-left: 280px;
-  border: none;
-  cursor: pointer;
-}
-@media screen and (min-width : 0px) and (max-width : 769px){
-  
-#flyoutMenu {
-  width: 150px;
-  height: 500px;
-  background-color: rgba(240, 248, 255, 0.603);
-  position: fixed;
-  top: 0;
-  left: 0;
-  transition: transform .5s
-  cubic-bezier(0, .52, 0, 1);
-  max-width: 768px;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding: none;
-}
-  #flyoutMenu a{
-    color: black;
-    background-color: #ffff;
-    text-decoration: none;
-    font-size: 0.5rem;
-    border-radius: 10px;
-    font-weight: 800;
-    padding: 10px 10px;
-    margin: auto;
-}
-#flyoutMenu a:hover,
-#flyoutMenu a:active{
-   background-color: black;
-    color: aliceblue;
-    font-size: 0.5rem;
-    font-weight: 800;
-    list-style: none;
-    border-radius: 10px;
-    padding: 10px 10px;
-    text-decoration: none;
-} 
-}
