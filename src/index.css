@@ -42,7 +42,7 @@ input.Add{
   flex-wrap: wrap;
   justify-content: space-around;
 }
-div.box{
+.box{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -96,7 +96,7 @@ h1,p{
 }
 .wrapper{
     width: 300px;
-    height: 350px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
@@ -116,7 +116,7 @@ h1,p{
     padding: 10px 30px;
     justify-content: space-around;
 }
-.list{
+/* .list{
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -125,14 +125,14 @@ h1,p{
     border-radius: 10px 10px;
     justify-content: space-around;
     margin: 10px 10px;
-}
-.list img{
+} */
+/* .list img{
     display: flex;
     flex-direction: column;
     width: 200px;
     justify-content: space-around;
     margin: auto;
-}
+} */
 div.item-desc{
   text-align: center;
 }

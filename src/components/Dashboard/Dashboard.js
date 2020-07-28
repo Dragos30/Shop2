@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import { connect } from 'react-redux'; 
 import { addProduct, removeItem } from '../actions/shopActions';
+import { getUser, removeUserSession } from '../Utils/Common';
 import MyStockChart from './MyStockChart';
 import './Dashboard.css';
 import PieChart from './PieChart';
 
-function Dashboard({ products, onSubmit, handleRemove }) {
+function Dashboard({ products, onSubmit, handleRemove, props }) {
     const [imageBase64, setImageBase64] = useState('');
     // până acum am luat datele din store și le-am afișat mai jos pe linia 24
     // acum am adăugat un formular, și vrem să adăugăm un nou produs în store
@@ -32,6 +33,11 @@ function Dashboard({ products, onSubmit, handleRemove }) {
             event.preventDefault();
         
     }
+    const user = getUser();
+    const handleLogout = () => {
+        removeUserSession();
+        props.history.push('/login');
+    }
        
     
     function encodeImageFileAsURL(element) {
@@ -44,6 +50,10 @@ function Dashboard({ products, onSubmit, handleRemove }) {
     }
         return (
             <div className="showproduct">
+                <div>
+                    Welcome {user.name}!<br /><br />
+                    <input type="button" onClick={handleLogout} value="Logout" />
+                </div>
                 <form onSubmit={handleSubmit}>
                     <h4>Product</h4>               
                     <input type="text" placeholder='id' name="productId"/>

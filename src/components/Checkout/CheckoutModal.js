@@ -12,7 +12,7 @@ function CheckoutModal() {
             <button className="ui small red button" id="openCheckout" onClick={handleShow}>
                 Checkout
             </button>
-            <Modal className="modal-lg" show={show} onHide={handleClose}>
+            <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
                     <Modal.Title><h5>Please complete your purchase!</h5></Modal.Title>
                     <i className="fa fa-credit-card" aria-hidden="true"></i>
