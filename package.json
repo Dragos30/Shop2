@@ -20,7 +20,7 @@
     "express": "^4.17.1",
     "highcharts": "^8.1.2",
     "highcharts-react-official": "^3.0.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^16.13.1",
     "react-admin": "^3.6.2",
